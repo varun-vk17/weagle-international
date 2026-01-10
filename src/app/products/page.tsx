@@ -36,15 +36,17 @@ export default function ProductsPage() {
             </header>
 
             <main className="products-page">
-                {/* Section 1: Intro */}
-                <section className="products-intro-section">
-                    <div className="container products-intro-container">
-                        <FadeIn>
-                            <h1 className="products-page-headline">Our Export Product Range</h1>
-                            <p className="products-page-subline">
-                                We supply a complete range of spices and seasonings for global markets, produced under controlled standards and customized for importer requirements.
-                            </p>
-                        </FadeIn>
+                {/* Section 1: Intro Hero */}
+                <section className="products-hero-section">
+                    <div className="products-hero-overlay">
+                        <div className="container products-hero-container">
+                            <FadeIn>
+                                <h1 className="products-page-headline">Our Export Product Range</h1>
+                                <p className="products-page-subline">
+                                    We supply a complete range of spices and seasonings for global markets, produced under controlled standards and customized for importer requirements.
+                                </p>
+                            </FadeIn>
+                        </div>
                     </div>
                 </section>
 

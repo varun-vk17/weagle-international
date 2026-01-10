@@ -3292,22 +3292,46 @@ body {
 /* ===== PRODUCTS PAGE STYLES ===== */
 
 /* Products Intro Section */
-.products-intro-section {
-    padding: 120px 24px 80px;
-    background-color: #FAFAFA;
+/* Products Page Hero Section */
+.products-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-image: url('/export-partner-bg-v2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.products-intro-container {
+.products-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-hero-container {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    padding: 120px 24px 80px;
 }
 
 .products-page-headline {
     font-family: var(--font-headline);
     font-size: 56px;
     font-weight: 700;
-    color: var(--color-text-primary);
+    color: #FFFFFF;
     margin-bottom: 32px;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -3317,7 +3341,7 @@ body {
     font-family: var(--font-body);
     font-size: 22px;
     font-weight: 500;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
@@ -3605,7 +3629,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .products-intro-section {
+    .products-hero-section {
+        min-height: 400px;
+    }
+
+    .products-hero-container {
         padding: 80px 24px 60px;
     }
 
