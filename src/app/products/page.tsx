@@ -1,8 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { FadeIn, StaggerContainer } from '@/components/animations';
 
 const staggerItem = {
@@ -15,6 +17,7 @@ const staggerItem = {
 
 
 export default function ProductsPage() {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     return (
         <>
             {/* Navigation Bar */}
@@ -25,16 +28,54 @@ export default function ProductsPage() {
                         WEAGLE INTERNATIONAL
                     </a>
                     <div className="nav-right">
-                        <nav className="nav-links">
+                        <nav className="nav-links desktop-only">
                             <Link href="/products">Our Products</Link>
                         </nav>
-                        <a href="/#contact" className="btn btn-primary btn-nav">
+                        <a href="/#contact" className="btn btn-primary btn-nav desktop-only">
                             Request Sample & Pricing
                             <span className="arrow-icon">→</span>
                         </a>
+
+                        <button
+                            className="mobile-menu-btn"
+                            onClick={() => setIsMobileMenuOpen(true)}
+                            aria-label="Open mobile menu"
+                        >
+                            <Menu size={24} />
+                        </button>
                     </div>
                 </div>
             </header>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        className="mobile-menu-overlay"
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    >
+                        <div className="mobile-menu-header">
+                            <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
+                                <img src="/weagle-logo.svg" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+                                WEAGLE
+                            </a>
+                            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
+                                <X size={24} />
+                            </button>
+                        </div>
+
+                        <nav className="mobile-nav-links">
+                            <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
+                            <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                Request Sample & Pricing
+                            </a>
+                        </nav>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <main className="products-page">
                 {/* Section 1: Intro */}

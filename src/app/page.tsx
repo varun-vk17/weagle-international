@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle, BadgeCheck, FileCheck, Calendar } from "lucide-react";
+import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle, BadgeCheck, FileCheck, Calendar, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, staggerItem, ScaleIn } from "@/components/animations";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFormExpanded, setIsFormExpanded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const testimonials = [
     {
@@ -61,22 +62,60 @@ export default function Home() {
               WEAGLE INTERNATIONAL
             </a>
             <div className="nav-right">
-              <nav className="nav-links">
+              <nav className="nav-links desktop-only">
                 <Link href="/products">Our Products</Link>
               </nav>
               <button
                 onClick={() => setIsFormExpanded(true)}
-                className="btn btn-primary btn-nav"
+                className="btn btn-primary btn-nav desktop-only"
                 style={{ cursor: 'pointer' }}
                 aria-label="Open request sample and pricing form"
               >
                 Request Sample & Pricing
                 <span className="arrow-icon">→</span>
               </button>
+
+              <button
+                className="mobile-menu-btn"
+                onClick={() => setIsMobileMenuOpen(true)}
+                aria-label="Open mobile menu"
+              >
+                <Menu size={24} />
+              </button>
             </div>
           </div>
         </header>
       )}
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="mobile-menu-overlay"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <div className="mobile-menu-header">
+              <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
+                <img src="/weagle-logo.svg" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+                WEAGLE
+              </a>
+              <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
+                <X size={24} />
+              </button>
+            </div>
+
+            <nav className="mobile-nav-links">
+              <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
+              <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
+                Request Sample & Pricing
+              </button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main>
         {/* Hero Section */}
