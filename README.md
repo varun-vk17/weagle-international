@@ -1,36 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weagle International - Premium Spice Export Website
 
-## Getting Started
+A modern, high-performance Next.js website for Weagle International, a B2B spice export company specializing in premium Indian spices for global markets.
 
-First, run the development server:
+## 🌟 Features
+
+- **Modern Tech Stack**: Built with Next.js 16, React 19, TypeScript, and Framer Motion
+- **Premium Design**: Professional B2B-focused design with smooth animations
+- **SEO Optimized**: Comprehensive metadata, Open Graph tags, sitemap, and robots.txt
+- **Performance**: Optimized images, compression, and production-ready configuration
+- **Responsive**: Fully responsive design for all devices
+- **Product Catalog**: Detailed product pages showcasing spice categories
+
+## 🚀 Getting Started
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Create production build
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deploy to Vercel (Recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build
+4. Update the domain in `src/app/layout.tsx` (line 25) to your actual domain
+5. Add environment variables if needed
 
-## Deploy on Vercel
+### Deploy to Other Platforms
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site can be deployed to any platform that supports Next.js:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Netlify**: Use the Netlify Next.js plugin
+- **AWS Amplify**: Connect your repository and deploy
+- **DigitalOcean App Platform**: Deploy directly from GitHub
+- **Self-hosted**: Build and run with `npm run build && npm start`
+
+## 🔧 Configuration
+
+### Update Domain
+
+Before deploying, update the domain in these files:
+
+1. `src/app/layout.tsx` - Line 25: `metadataBase: new URL('https://your-domain.com')`
+2. `src/app/sitemap.ts` - Line 4: `const baseUrl = 'https://your-domain.com'`
+3. `public/robots.txt` - Line 7: `Sitemap: https://your-domain.com/sitemap.xml`
+
+### Add Contact Information
+
+Update the contact details in:
+- `src/app/page.tsx` - Footer section (lines 645-647)
+- WhatsApp link in products page (line 248)
+
+### Add Analytics
+
+Add your analytics tracking codes:
+- Google Analytics
+- Facebook Pixel
+- Other tracking scripts
+
+Add them to `src/app/layout.tsx` or create a separate analytics component.
+
+## 📁 Project Structure
+
+```
+weagle-app/
+├── public/              # Static assets (images, logos, etc.)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx   # Root layout with metadata
+│   │   ├── page.tsx     # Home page
+│   │   ├── products/    # Products page
+│   │   ├── globals.css  # Global styles
+│   │   └── sitemap.ts   # Dynamic sitemap
+│   └── components/
+│       └── animations.tsx # Reusable animation components
+├── next.config.ts       # Next.js configuration
+└── package.json         # Dependencies
+```
+
+## 🎨 Customization
+
+### Colors & Branding
+
+The design uses CSS variables defined in `src/app/globals.css`. Update the color scheme by modifying the CSS variables.
+
+### Content
+
+- **Home Page**: Edit `src/app/page.tsx`
+- **Products Page**: Edit `src/app/products/page.tsx`
+- **Metadata**: Edit `src/app/layout.tsx`
+
+## 📊 SEO Checklist
+
+- ✅ Comprehensive metadata with Open Graph and Twitter cards
+- ✅ Dynamic sitemap.xml
+- ✅ robots.txt configured
+- ✅ Semantic HTML structure
+- ✅ Image alt tags
+- ✅ Proper heading hierarchy
+- ✅ Fast page load times
+- ✅ Mobile responsive
+
+## 🔒 Production Checklist
+
+Before going live:
+
+- [ ] Update domain URLs in configuration files
+- [ ] Add real contact information (email, phone)
+- [ ] Add Google Analytics or other tracking
+- [ ] Add Google Search Console verification
+- [ ] Test all forms and CTAs
+- [ ] Verify all images load correctly
+- [ ] Test on multiple devices and browsers
+- [ ] Set up SSL certificate (automatic on Vercel)
+- [ ] Configure custom domain
+- [ ] Test contact forms (if connected to backend)
+
+## 📝 License
+
+Copyright © 2024 Weagle International. All rights reserved.
+
+## 🤝 Support
+
+For technical support or questions, contact your development team.
