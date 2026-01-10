@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle } from "lucide-react";
+import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle, BadgeCheck, FileCheck, Calendar } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -306,35 +306,45 @@ export default function Home() {
             <StaggerContainer className="reliability-grid">
               {/* Card 1 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/card1.png" alt="Consistent Batch Quality Control" width={400} height={300} className="reliability-card-img" />
+                <div className="reliability-icon-wrapper">
+                  <BadgeCheck className="reliability-icon" strokeWidth={1.5} />
+                </div>
                 <h3 className="reliability-card-title">Consistent Batch Quality</h3>
                 <p className="reliability-card-text">You get consistent batch quality across orders.</p>
               </motion.div>
 
               {/* Card 2 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/card2.png" alt="Confirmed Pricing Before Production" width={400} height={300} className="reliability-card-img" />
+                <div className="reliability-icon-wrapper">
+                  <FileCheck className="reliability-icon" strokeWidth={1.5} />
+                </div>
                 <h3 className="reliability-card-title">Confirmed Pricing</h3>
                 <p className="reliability-card-text">You get pricing confirmed before production begins.</p>
               </motion.div>
 
               {/* Card 3 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/card3.png" alt="Clear Delivery Timelines" width={400} height={300} className="reliability-card-img" />
+                <div className="reliability-icon-wrapper">
+                  <Calendar className="reliability-icon" strokeWidth={1.5} />
+                </div>
                 <h3 className="reliability-card-title">Clear Timelines</h3>
                 <p className="reliability-card-text">You get clear timelines you can plan around.</p>
               </motion.div>
 
               {/* Card 4 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/card4.png" alt="Full Supply Chain Visibility" width={400} height={300} className="reliability-card-img" />
+                <div className="reliability-icon-wrapper">
+                  <Eye className="reliability-icon" strokeWidth={1.5} />
+                </div>
                 <h3 className="reliability-card-title">Full Visibility</h3>
                 <p className="reliability-card-text">You get full visibility from sourcing to shipment.</p>
               </motion.div>
 
               {/* Card 5 - Wide */}
               <motion.div className="reliability-card reliability-card-wide" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/icon-communication.png" alt="Reliable Communication Support" width={400} height={300} className="reliability-card-img" />
+                <div className="reliability-icon-wrapper">
+                  <MessageCircle className="reliability-icon" strokeWidth={1.5} />
+                </div>
                 <h3 className="reliability-card-title">Reliable Communication</h3>
                 <p className="reliability-card-text">You get communication that does not disappear when issues arise.</p>
               </motion.div>

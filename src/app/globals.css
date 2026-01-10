@@ -196,7 +196,7 @@ body {
 }
 
 .btn-lg {
-    padding: 12px 16px 12px 24px;
+    padding: 10px 16px 10px 24px;
     font-size: 16px;
 }
 
@@ -3229,15 +3229,34 @@ body {
 }
 
 /* Image/Icon Styles */
-.reliability-card-img {
-    width: 64px !important;
-    /* Force width */
-    height: 64px !important;
-    /* Force height */
-    object-fit: contain;
+.reliability-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 24px;
-    align-self: flex-start;
-    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.reliability-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+}
+
+.reliability-card:hover .reliability-icon-wrapper {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.reliability-card-wide .reliability-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.reliability-card-wide .reliability-icon {
+    color: #FFFFFF;
 }
 
 .reliability-card-title {
