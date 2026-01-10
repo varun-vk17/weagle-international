@@ -3366,10 +3366,11 @@ body {
     overflow: hidden;
     background-color: #F9FAFB;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: sticky;
-    top: 150px;
+    top: 120px;
+    padding-top: 40px;
 }
 
 .category-text-block {
