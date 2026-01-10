@@ -272,6 +272,12 @@ body {
     fill: currentColor;
 }
 
+.whatsapp-icon-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
 /* Hero Section */
 .hero-section {
     padding-top: 60px;
