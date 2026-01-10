@@ -306,8 +306,8 @@ export default function Home() {
             <StaggerContainer className="reliability-grid">
               {/* Card 1 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <div className="reliability-icon-wrapper">
-                  <BadgeCheck className="reliability-icon" strokeWidth={1.5} />
+                <div className="reliability-icon-wrapper" style={{ backgroundColor: 'rgba(16, 185, 129, 0.1)' }}>
+                  <BadgeCheck className="reliability-icon" strokeWidth={1.5} style={{ color: '#10B981' }} />
                 </div>
                 <h3 className="reliability-card-title">Consistent Batch Quality</h3>
                 <p className="reliability-card-text">You get consistent batch quality across orders.</p>
@@ -315,8 +315,8 @@ export default function Home() {
 
               {/* Card 2 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <div className="reliability-icon-wrapper">
-                  <FileCheck className="reliability-icon" strokeWidth={1.5} />
+                <div className="reliability-icon-wrapper" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)' }}>
+                  <FileCheck className="reliability-icon" strokeWidth={1.5} style={{ color: '#3B82F6' }} />
                 </div>
                 <h3 className="reliability-card-title">Confirmed Pricing</h3>
                 <p className="reliability-card-text">You get pricing confirmed before production begins.</p>
@@ -324,8 +324,8 @@ export default function Home() {
 
               {/* Card 3 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <div className="reliability-icon-wrapper">
-                  <Calendar className="reliability-icon" strokeWidth={1.5} />
+                <div className="reliability-icon-wrapper" style={{ backgroundColor: 'rgba(245, 158, 11, 0.1)' }}>
+                  <Calendar className="reliability-icon" strokeWidth={1.5} style={{ color: '#F59E0B' }} />
                 </div>
                 <h3 className="reliability-card-title">Clear Timelines</h3>
                 <p className="reliability-card-text">You get clear timelines you can plan around.</p>
@@ -333,8 +333,8 @@ export default function Home() {
 
               {/* Card 4 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <div className="reliability-icon-wrapper">
-                  <Eye className="reliability-icon" strokeWidth={1.5} />
+                <div className="reliability-icon-wrapper" style={{ backgroundColor: 'rgba(139, 92, 246, 0.1)' }}>
+                  <Eye className="reliability-icon" strokeWidth={1.5} style={{ color: '#8B5CF6' }} />
                 </div>
                 <h3 className="reliability-card-title">Full Visibility</h3>
                 <p className="reliability-card-text">You get full visibility from sourcing to shipment.</p>
@@ -342,8 +342,8 @@ export default function Home() {
 
               {/* Card 5 - Wide */}
               <motion.div className="reliability-card reliability-card-wide" variants={staggerItem} whileHover={{ y: -5 }}>
-                <div className="reliability-icon-wrapper">
-                  <MessageCircle className="reliability-icon" strokeWidth={1.5} />
+                <div className="reliability-icon-wrapper" style={{ backgroundColor: 'rgba(56, 189, 248, 0.2)' }}>
+                  <MessageCircle className="reliability-icon" strokeWidth={1.5} style={{ color: '#38BDF8' }} />
                 </div>
                 <h3 className="reliability-card-title">Reliable Communication</h3>
                 <p className="reliability-card-text">You get communication that does not disappear when issues arise.</p>
