@@ -484,7 +484,14 @@ export default function Home() {
               </StaggerContainer>
               <FadeIn direction="left" delay={0.2}>
                 <div className="quality-image-container">
-                  <Image src="/quality-inspection.png" alt="Quality Inspection and Testing Process" width={600} height={400} className="quality-image" />
+                  <Image
+                    src="/quality-inspection.png"
+                    alt="Quality Inspection and Testing Process"
+                    width={700}
+                    height={382}
+                    className="quality-image"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </FadeIn>
             </div>
