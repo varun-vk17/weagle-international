@@ -162,44 +162,72 @@ body {
     color: var(--color-primary);
 }
 
-/* Buttons */
+/* Buttons - Modern Pill Style with Arrow */
 .btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    border-radius: var(--border-radius);
+    justify-content: space-between;
+    border-radius: 50px;
     font-weight: 600;
-    /* Consistent bold weight */
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    gap: 12px;
 }
 
 .btn-nav {
-    padding: 10px 24px;
+    padding: 12px 16px 12px 24px;
     font-size: 14px;
     white-space: nowrap;
 }
 
 .btn-lg {
-    padding: 14px 27px;
-    font-size: 14px;
+    padding: 16px 20px 16px 32px;
+    font-size: 16px;
 }
 
 .btn-primary {
     background-color: var(--color-primary);
     color: white;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+}
+
+/* Arrow Circle on Right */
+.btn-primary .arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.btn-lg .arrow-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
 }
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover .arrow-icon {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateX(4px);
 }
 
 .btn-primary:active {
     transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Section */
