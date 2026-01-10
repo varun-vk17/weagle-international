@@ -257,7 +257,7 @@ export default function Home() {
 
         {/* Certification Logos Marquee */}
         <section className="certifications-marquee">
-          <div className="marquee-container">
+          <FadeIn className="marquee-container">
             <div className="marquee-track">
               <div className="marquee-content">
                 <Image src="/fssai-logo.png" alt="FSSAI Food Safety Certification" width={120} height={60} className="cert-logo" />
@@ -267,7 +267,7 @@ export default function Home() {
                 <Image src="/haccp-logo.png" alt="HACCP Hazard Analysis Critical Control Point Certification" width={120} height={60} className="cert-logo" />
               </div>
             </div>
-          </div>
+          </FadeIn>
         </section>
 
         {/* B2B Positioning Section */}
@@ -368,7 +368,7 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <div className="process-layout">
+            <StaggerContainer className="process-layout">
               {/* Left Column */}
               <div className="process-steps-left">
                 <motion.div className="process-card" variants={staggerItem}>
@@ -411,7 +411,7 @@ export default function Home() {
                   <p className="step-text">Orders ship on schedule with clear updates until delivery.</p>
                 </motion.div>
               </div>
-            </div>
+            </StaggerContainer>
 
             <p className="process-closing">
               You always know what is happening and what comes next.
@@ -516,56 +516,60 @@ export default function Home() {
         {/* Testimonials Section */}
         <section className="testimonials-section">
           <div className="container testimonials-container">
-            <div className="testimonials-header">
-              <h2 className="testimonials-headline">Trusted by Importers Who Depend on Consistency</h2>
-              <p className="testimonials-subline">
-                Importers choose us because reliability matters more than promises.
-              </p>
-            </div>
+            <FadeIn>
+              <div className="testimonials-header">
+                <h2 className="testimonials-headline">Trusted by Importers Who Depend on Consistency</h2>
+                <p className="testimonials-subline">
+                  Importers choose us because reliability matters more than promises.
+                </p>
+              </div>
+            </FadeIn>
 
-            <div className="testimonials-stack">
-              {testimonials.map((testimonial, index) => {
-                const position = (index - currentIndex + testimonials.length) % testimonials.length;
-                return (
-                  <div
-                    key={index}
-                    className={`testimonial-card testimonial-card-${position}`}
-                    style={{
-                      backgroundColor: testimonial.bgColor,
-                      '--card-color': testimonial.color
-                    } as React.CSSProperties}
-                  >
-                    <div className="testimonial-content">
-                      <p className="testimonial-quote">{testimonial.quote}</p>
-                      <div className="testimonial-author">
-                        <Image src={testimonial.image} alt={`${testimonial.name} - ${testimonial.title}`} width={60} height={60} className="author-avatar" />
-                        <div className="author-info">
-                          <div className="author-name">{testimonial.name}</div>
-                          <div className="author-title">{testimonial.title}</div>
-                          <div className="author-company">{testimonial.company}</div>
+            <FadeIn delay={0.2}>
+              <div className="testimonials-stack">
+                {testimonials.map((testimonial, index) => {
+                  const position = (index - currentIndex + testimonials.length) % testimonials.length;
+                  return (
+                    <div
+                      key={index}
+                      className={`testimonial-card testimonial-card-${position}`}
+                      style={{
+                        backgroundColor: testimonial.bgColor,
+                        '--card-color': testimonial.color
+                      } as React.CSSProperties}
+                    >
+                      <div className="testimonial-content">
+                        <p className="testimonial-quote">{testimonial.quote}</p>
+                        <div className="testimonial-author">
+                          <Image src={testimonial.image} alt={`${testimonial.name} - ${testimonial.title}`} width={60} height={60} className="author-avatar" />
+                          <div className="author-info">
+                            <div className="author-name">{testimonial.name}</div>
+                            <div className="author-title">{testimonial.title}</div>
+                            <div className="author-company">{testimonial.company}</div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
 
-            <div className="testimonials-nav">
-              <button onClick={handlePrev} className="nav-button" aria-label="Previous testimonial">
-                ←
-              </button>
-              <button onClick={handleNext} className="nav-button" aria-label="Next testimonial">
-                →
-              </button>
-            </div>
+              <div className="testimonials-nav">
+                <button onClick={handlePrev} className="nav-button" aria-label="Previous testimonial">
+                  ←
+                </button>
+                <button onClick={handleNext} className="nav-button" aria-label="Next testimonial">
+                  →
+                </button>
+              </div>
+            </FadeIn>
           </div>
         </section >
 
         {/* Final CTA Section */}
         < section className="final-cta-section" >
           <div className="container final-cta-container">
-            <div className="cta-content">
+            <FadeIn className="cta-content">
               <div className="cta-text">
                 <h2 className="cta-headline">Start Your First Order</h2>
                 <p className="cta-subline">
@@ -628,7 +632,7 @@ export default function Home() {
                   </button>
                 </form>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </section >
 
