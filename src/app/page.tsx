@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FadeIn, StaggerContainer, staggerItem, ScaleIn } from "@/components/animations";
 
 export default function Home() {
@@ -61,7 +62,7 @@ export default function Home() {
             </a>
             <div className="nav-right">
               <nav className="nav-links">
-                <a href="#about">About Us</a>
+                <Link href="/about">About Us</Link>
                 <a href="/products">Our Products</a>
               </nav>
               <button
@@ -71,6 +72,7 @@ export default function Home() {
                 aria-label="Open request sample and pricing form"
               >
                 Request Sample & Pricing
+                <span className="arrow-icon">→</span>
               </button>
             </div>
           </div>
@@ -639,7 +641,7 @@ export default function Home() {
               <div className="footer-column">
                 <h3 className="footer-heading">Company</h3>
                 <ul className="footer-list">
-                  <li><a href="#about">About Us</a></li>
+                  <li><Link href="/about">About Us</Link></li>
                   <li><a href="#certifications">Certifications</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>

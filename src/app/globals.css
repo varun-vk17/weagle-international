@@ -3865,3 +3865,293 @@ body {
         padding: 32px 20px;
     }
 }
+
+/* ===== ABOUT PAGE STYLES ===== */
+
+/* About Page - General */
+.about-page {
+    background-color: #FFFFFF;
+}
+
+/* Section 1: About Intro */
+.about-intro-section {
+    padding: 140px 24px 100px;
+    background-color: #FAFAFA;
+}
+
+.about-intro-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-headline {
+    font-family: var(--font-headline);
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.about-subheadline {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 48px;
+    line-height: 1.5;
+}
+
+.about-intro-body {
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    line-height: 1.8;
+    margin-bottom: 64px;
+}
+
+.about-intro-body p {
+    margin-bottom: 24px;
+}
+
+.about-intro-body p:last-child {
+    margin-bottom: 0;
+}
+
+.about-intro-image {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Section 2, 3, 4: Content Sections */
+.about-approach-section,
+.about-standards-section,
+.about-longterm-section {
+    padding: 100px 24px;
+    background-color: #FFFFFF;
+}
+
+.about-approach-section {
+    background-color: #FAFAFA;
+}
+
+.about-approach-container,
+.about-standards-container,
+.about-longterm-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section-title {
+    font-family: var(--font-headline);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.about-lead-text {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.about-body-text {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.about-body-text p {
+    margin-bottom: 24px;
+}
+
+.about-body-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-approach-content,
+.about-standards-content,
+.about-longterm-content {
+    max-width: 800px;
+}
+
+/* Section 5: CTA */
+.about-cta-section {
+    padding: 120px 24px;
+    background-color: #F9F9F7;
+}
+
+.about-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-cta-headline {
+    font-family: var(--font-headline);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.about-cta-text {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 48px;
+}
+
+.about-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-secondary {
+    background-color: #FFFFFF;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-text-primary);
+    padding: 16px 20px 16px 32px;
+    font-size: 16px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-text-primary);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.btn-secondary:hover .whatsapp-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive - About Page */
+@media (max-width: 768px) {
+    .about-intro-section {
+        padding: 100px 20px 60px;
+    }
+
+    .about-headline {
+        font-size: 36px;
+    }
+
+    .about-subheadline {
+        font-size: 19px;
+    }
+
+    .about-intro-body {
+        font-size: 17px;
+    }
+
+    .about-approach-section,
+    .about-standards-section,
+    .about-longterm-section {
+        padding: 60px 20px;
+    }
+
+    .about-section-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .about-lead-text {
+        font-size: 19px;
+    }
+
+    .about-body-text {
+        font-size: 17px;
+    }
+
+    .about-cta-section {
+        padding: 80px 20px;
+    }
+
+    .about-cta-headline {
+        font-size: 32px;
+    }
+
+    .about-cta-text {
+        font-size: 18px;
+    }
+
+    .about-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-headline {
+        font-size: 32px;
+    }
+
+    .about-subheadline {
+        font-size: 18px;
+    }
+
+    .about-intro-body {
+        font-size: 16px;
+    }
+
+    .about-section-title {
+        font-size: 28px;
+    }
+
+    .about-lead-text {
+        font-size: 18px;
+    }
+
+    .about-body-text {
+        font-size: 16px;
+    }
+
+    .about-cta-headline {
+        font-size: 28px;
+    }
+
+    .about-cta-text {
+        font-size: 17px;
+    }
+}

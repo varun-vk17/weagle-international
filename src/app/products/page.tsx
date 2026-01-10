@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { FadeIn, StaggerContainer } from '@/components/animations';
 
 const staggerItem = {
@@ -25,28 +26,27 @@ export default function ProductsPage() {
                     </a>
                     <div className="nav-right">
                         <nav className="nav-links">
-                            <a href="/#about">About Us</a>
-                            <a href="/products">Our Products</a>
+                            <Link href="/about">About Us</Link>
+                            <Link href="/products">Our Products</Link>
                         </nav>
                         <a href="/#contact" className="btn btn-primary btn-nav">
                             Request Sample & Pricing
+                            <span className="arrow-icon">→</span>
                         </a>
                     </div>
                 </div>
             </header>
 
             <main className="products-page">
-                {/* Section 1: Intro Hero */}
-                <section className="products-hero-section">
-                    <div className="products-hero-overlay">
-                        <div className="container products-hero-container">
-                            <FadeIn>
-                                <h1 className="products-page-headline">Our Export Product Range</h1>
-                                <p className="products-page-subline">
-                                    We supply a complete range of spices and seasonings for global markets, produced under controlled standards and customized for importer requirements.
-                                </p>
-                            </FadeIn>
-                        </div>
+                {/* Section 1: Intro */}
+                <section className="products-intro-section">
+                    <div className="container products-intro-container">
+                        <FadeIn>
+                            <h1 className="products-page-headline">Our Export Product Range</h1>
+                            <p className="products-page-subline">
+                                We supply a complete range of spices and seasonings for global markets, produced under controlled standards and customized for importer requirements.
+                            </p>
+                        </FadeIn>
                     </div>
                 </section>
 
