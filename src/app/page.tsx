@@ -5,7 +5,7 @@ import { CheckCircle2, DollarSign, Clock, Eye, MessageCircle, BadgeCheck, FileCh
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FadeIn, StaggerContainer, staggerItem, ScaleIn } from "@/components/animations";
+import { FadeIn, StaggerContainer, staggerItem, ScaleIn, RevealText, ParallaxImage } from "@/components/animations";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -97,7 +97,9 @@ export default function Home() {
 
                 {/* Headlines */}
                 <h1 className="headline">
-                  Import Indian Spices<br />With Complete Peace of Mind
+                  <RevealText delay={0.2}>
+                    Import Indian Spices With Complete Peace of Mind
+                  </RevealText>
                 </h1>
                 <p className="subheadline">
                   From sourcing to shipment, every order follows a controlled export process designed for
@@ -241,7 +243,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
-                <Image
+                <ParallaxImage
                   src="/product_spice.png"
                   alt="Premium Export Quality Indian Spices - Weagle International"
                   width={600}
@@ -274,7 +276,9 @@ export default function Home() {
         <section className="positioning-section">
           <div className="container positioning-container">
             <FadeIn>
-              <h2 className="positioning-headline">An Export Partner for Serious Importers</h2>
+              <h2 className="positioning-headline">
+                <RevealText>An Export Partner for Serious Importers</RevealText>
+              </h2>
 
               <div className="positioning-body">
                 <p className="positioning-text">
@@ -296,7 +300,9 @@ export default function Home() {
           <div className="container reliability-container">
             <FadeIn>
               <div className="reliability-header">
-                <h2 className="reliability-headline">What You Can Rely On Every Shipment</h2>
+                <h2 className="reliability-headline">
+                  <RevealText>What You Can Rely On Every Shipment</RevealText>
+                </h2>
                 <p className="reliability-intro">
                   When your supply chain is stable, everything else runs smoother.
                 </p>
@@ -361,7 +367,9 @@ export default function Home() {
           <div className="container process-container">
             <FadeIn>
               <div className="process-header">
-                <h2 className="process-headline">A Controlled Export Process From Start to Finish</h2>
+                <h2 className="process-headline">
+                  <RevealText>A Controlled Export Process From Start to Finish</RevealText>
+                </h2>
                 <p className="process-intro">
                   Every order follows a defined export system designed to protect quality, timelines, and compliance.
                 </p>
@@ -424,7 +432,9 @@ export default function Home() {
           <div className="container products-container">
             <FadeIn>
               <div className="products-header">
-                <h2 className="products-headline">Our Product Categories</h2>
+                <h2 className="products-headline">
+                  <RevealText>Our Product Categories</RevealText>
+                </h2>
                 <p className="products-subline">
                   We supply export quality Indian spices for bulk buyers, distributors, and private label brands.
                 </p>
@@ -476,7 +486,9 @@ export default function Home() {
           <div className="container quality-container">
             <FadeIn>
               <div className="quality-header">
-                <h2 className="quality-headline">Quality, Compliance, and Accountability</h2>
+                <h2 className="quality-headline">
+                  <RevealText>Quality, Compliance, and Accountability</RevealText>
+                </h2>
                 <p className="quality-subline">
                   Every shipment follows defined standards designed to protect your business.
                 </p>
@@ -495,13 +507,13 @@ export default function Home() {
               </StaggerContainer>
               <FadeIn direction="left" delay={0.2}>
                 <div className="quality-image-container">
-                  <Image
+                  <ParallaxImage
                     src="/quality-inspection.png"
                     alt="Quality Inspection and Testing Process"
                     width={700}
                     height={382}
                     className="quality-image"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: '100%' }}
                   />
                 </div>
               </FadeIn>
