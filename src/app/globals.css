@@ -429,51 +429,128 @@ body {
         /* Hide nav links on mobile for simplicity */
     }
 
+    /* Mobile-optimized buttons with proper touch targets */
+    .btn {
+        min-height: 48px;
+        padding: 14px 24px;
+        font-size: 16px;
+        /* Prevent iOS zoom */
+        touch-action: manipulation;
+        /* Disable double-tap zoom */
+    }
+
+    .btn-lg {
+        min-height: 52px;
+        padding: 16px 28px;
+        width: 100%;
+    }
+
+    .btn-nav {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
     .hero-section {
-        padding-top: 64px;
+        padding-top: 48px;
         padding-bottom: 48px;
     }
 
     .hero-grid {
         grid-template-columns: 1fr;
-        /* Stack vertically */
-        gap: 48px;
+        gap: 40px;
     }
 
     .hero-content {
         order: 1;
-        /* Content first */
     }
 
     .hero-visual {
         order: 2;
-        /* Image second */
     }
 
     .headline {
-        font-size: 36px;
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
     }
 
     .subheadline {
         font-size: 16px;
+        line-height: 1.5;
     }
 
     .cta-group {
         width: 100%;
         align-items: stretch;
-    }
-
-    .btn-lg {
-        width: 100%;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .link-secondary {
         justify-content: center;
+        min-height: 44px;
+        padding: 12px;
     }
 
     .trust-badges {
         flex-wrap: wrap;
-        /* Allow wrapping on very small screens */
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .badge {
+        gap: 6px;
+    }
+
+    /* Form inputs - mobile optimized */
+    input,
+    textarea,
+    select {
+        min-height: 48px;
+        font-size: 16px;
+        /* Prevent iOS zoom */
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    /* Container padding optimization */
+    .container {
+        padding: 0 16px;
+    }
+}
+
+/* Small Phones - iPhone SE, etc. */
+@media (max-width: 480px) {
+    .headline {
+        font-size: 28px;
+        line-height: 1.15;
+    }
+
+    .subheadline {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 12px 20px;
+    }
+
+    .trust-badges {
+        font-size: 13px;
+        gap: 10px;
+    }
+
+    .social-proof {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 0 12px;
     }
 }
 
@@ -3630,31 +3707,35 @@ body {
 
 @media (max-width: 768px) {
     .products-hero-section {
-        min-height: 400px;
+        min-height: 350px;
+        background-position: center center;
     }
 
     .products-hero-container {
-        padding: 80px 24px 60px;
+        padding: 60px 20px;
     }
 
     .products-page-headline {
-        font-size: 38px;
+        font-size: 32px;
+        line-height: 1.2;
     }
 
     .products-page-subline {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 1.5;
     }
 
     .product-category-section {
-        padding: 60px 24px;
+        padding: 48px 16px;
     }
 
     .category-main-title {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 16px;
     }
 
     .category-description {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .product-list-grid {
@@ -3662,8 +3743,41 @@ body {
         gap: 12px;
     }
 
-    .masala-group-title {
-        font-size: 20px;
+    .product-list-item {
+        font-size: 15px;
+        padding: 12px 16px;
+    }
+
+    .category-visual-right {
+        order: -1;
+        /* Image first on mobile */
+        min-height: 250px;
+        padding-top: 0;
+        position: relative;
+        top: 0;
+    }
+
+    .masala-group-row {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .btn-primary-products {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .products-whatsapp-link {
+        font-size: 15px;
+        text-align: center;
+        display: block;
+        padding: 12px;
+    }
+
+    .products-cta-buttons {
+        flex-direction: column;
+        gap: 16px;
     }
 
     .products-cta-content {
@@ -3681,5 +3795,45 @@ body {
     .btn-primary-products {
         width: 100%;
         padding: 16px 32px;
+    }
+}
+
+/* Small Phones - Products Page */
+@media (max-width: 480px) {
+    .products-hero-section {
+        min-height: 300px;
+    }
+
+    .products-hero-container {
+        padding: 48px 16px;
+    }
+
+    .products-page-headline {
+        font-size: 28px;
+    }
+
+    .products-page-subline {
+        font-size: 16px;
+    }
+
+    .category-main-title {
+        font-size: 24px;
+    }
+
+    .product-category-section {
+        padding: 40px 12px;
+    }
+
+    .product-list-item {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .products-cta-headline {
+        font-size: 24px;
+    }
+
+    .products-cta-content {
+        padding: 32px 20px;
     }
 }
