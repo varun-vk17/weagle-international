@@ -1967,19 +1967,17 @@ body {
 }
 
 .quality-image-container {
-    width: 80%;
-    height: 110%;
-    min-height: 550px;
+    width: 100%;
+    height: auto;
     border-radius: 32px;
     overflow: hidden;
-    background-color: #F3F4F6;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Removed background-color and fixed height to prevent empty space */
 }
 
 .quality-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
 }
 
 .quality-item {

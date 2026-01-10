@@ -491,7 +491,7 @@ export default function Home() {
                     width={700}
                     height={382}
                     className="quality-image"
-                    style={{ objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto' }}
                   />
                 </div>
               </FadeIn>
