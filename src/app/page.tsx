@@ -55,8 +55,8 @@ export default function Home() {
         <header className="navbar">
           <div className="container navbar-content">
 
-            <a href="#" className="logo">
-              <img src="/weagle-logo.svg" alt="Weagle Logo" className="logo-icon" />
+            <a href="/" className="logo" aria-label="Weagle International Home">
+              <img src="/weagle-logo.svg" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
               WEAGLE INTERNATIONAL
             </a>
             <div className="nav-right">
@@ -68,6 +68,7 @@ export default function Home() {
                 onClick={() => setIsFormExpanded(true)}
                 className="btn btn-primary btn-nav"
                 style={{ cursor: 'pointer' }}
+                aria-label="Open request sample and pricing form"
               >
                 Request Sample & Pricing
               </button>
@@ -116,6 +117,7 @@ export default function Home() {
                   style={{ cursor: 'pointer' }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label="Request sample and pricing - opens contact form"
                 >
                   Request Sample & Pricing <span className="arrow-icon">→</span>
                 </motion.button>
@@ -123,7 +125,7 @@ export default function Home() {
 
               {/* Expandable Form Modal */}
               {isFormExpanded && (
-                <div className="expandable-modal-overlay" onClick={() => setIsFormExpanded(false)}>
+                <div className="expandable-modal-overlay" onClick={() => setIsFormExpanded(false)} role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                   <div className="expandable-modal-content" onClick={(e) => e.stopPropagation()}>
                     <button
                       className="modal-close-btn"
@@ -134,10 +136,10 @@ export default function Home() {
                     </button>
 
                     <div className="modal-form-wrapper">
-                      <h2 className="modal-headline">Request Sample & Pricing</h2>
+                      <h2 id="modal-headline" className="modal-headline">Request Sample & Pricing</h2>
                       <p className="modal-subline">Submit your requirements and receive a detailed quote within 24 hours.</p>
 
-                      <form className="modal-enquiry-form">
+                      <form className="modal-enquiry-form" aria-label="Sample and pricing request form">
                         <div className="modal-form-row">
                           <div className="form-group">
                             <label htmlFor="modal-name">Full Name *</label>
@@ -181,7 +183,7 @@ export default function Home() {
                           <textarea id="modal-message" name="message" rows={4} placeholder="Describe your specific needs, certifications required, or any questions..."></textarea>
                         </div>
 
-                        <button type="submit" className="form-submit-btn">
+                        <button type="submit" className="form-submit-btn" aria-label="Submit enquiry form">
                           Submit Enquiry
                         </button>
                       </form>
@@ -233,14 +235,20 @@ export default function Home() {
 
             {/* Right Column: Image */}
             <div className="hero-visual">
-              <motion.img
-                src="/product_spice.png"
-                alt="Premium Export Quality Spices"
-                className="hero-image"
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              />
+              >
+                <Image
+                  src="/product_spice.png"
+                  alt="Premium Export Quality Indian Spices - Weagle International"
+                  width={600}
+                  height={600}
+                  className="hero-image"
+                  priority
+                />
+              </motion.div>
             </div>
 
           </div>
@@ -251,11 +259,11 @@ export default function Home() {
           <div className="marquee-container">
             <div className="marquee-track">
               <div className="marquee-content">
-                <img src="/fssai-logo.png" alt="FSSAI Certified" className="cert-logo" />
-                <img src="/iec-logo.png" alt="IEC Certified" className="cert-logo" />
-                <img src="/msme-logo.png" alt="MSME Certified" className="cert-logo" />
-                <img src="/gmp-logo.png" alt="GMP Certified" className="cert-logo" />
-                <img src="/haccp-logo.png" alt="HACCP Certified" className="cert-logo" />
+                <Image src="/fssai-logo.png" alt="FSSAI Food Safety Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/iec-logo.png" alt="IEC Import Export Code Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/msme-logo.png" alt="MSME Micro Small Medium Enterprise Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/gmp-logo.png" alt="GMP Good Manufacturing Practice Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/haccp-logo.png" alt="HACCP Hazard Analysis Critical Control Point Certification" width={120} height={60} className="cert-logo" />
               </div>
             </div>
           </div>
@@ -297,35 +305,35 @@ export default function Home() {
             <StaggerContainer className="reliability-grid">
               {/* Card 1 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/card1.png" alt="Quality" className="reliability-card-img" />
+                <Image src="/card1.png" alt="Consistent Batch Quality Control" width={400} height={300} className="reliability-card-img" />
                 <h3 className="reliability-card-title">Consistent Batch Quality</h3>
                 <p className="reliability-card-text">You get consistent batch quality across orders.</p>
               </motion.div>
 
               {/* Card 2 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/card2.png" alt="Pricing" className="reliability-card-img" />
+                <Image src="/card2.png" alt="Confirmed Pricing Before Production" width={400} height={300} className="reliability-card-img" />
                 <h3 className="reliability-card-title">Confirmed Pricing</h3>
                 <p className="reliability-card-text">You get pricing confirmed before production begins.</p>
               </motion.div>
 
               {/* Card 3 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/card3.png" alt="Timelines" className="reliability-card-img" />
+                <Image src="/card3.png" alt="Clear Delivery Timelines" width={400} height={300} className="reliability-card-img" />
                 <h3 className="reliability-card-title">Clear Timelines</h3>
                 <p className="reliability-card-text">You get clear timelines you can plan around.</p>
               </motion.div>
 
               {/* Card 4 */}
               <motion.div className="reliability-card" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/card4.png" alt="Visibility" className="reliability-card-img" />
+                <Image src="/card4.png" alt="Full Supply Chain Visibility" width={400} height={300} className="reliability-card-img" />
                 <h3 className="reliability-card-title">Full Visibility</h3>
                 <p className="reliability-card-text">You get full visibility from sourcing to shipment.</p>
               </motion.div>
 
               {/* Card 5 - Wide */}
               <motion.div className="reliability-card reliability-card-wide" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/icon-communication.png" alt="Communication" className="reliability-card-img" />
+                <Image src="/icon-communication.png" alt="Reliable Communication Support" width={400} height={300} className="reliability-card-img" />
                 <h3 className="reliability-card-title">Reliable Communication</h3>
                 <p className="reliability-card-text">You get communication that does not disappear when issues arise.</p>
               </motion.div>
@@ -371,7 +379,7 @@ export default function Home() {
 
               {/* Center Column: Visual */}
               <div className="process-center">
-                <img src="/export_process_center.png" alt="Export Process Tracking" className="process-center-img" />
+                <Image src="/export_process_center.png" alt="Export Process Tracking System" width={500} height={600} className="process-center-img" />
               </div>
 
               {/* Right Column */}
@@ -415,7 +423,7 @@ export default function Home() {
             <StaggerContainer className="products-grid">
               {/* Category 1: Blended Spices */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/blended_spices.png" alt="Blended Spices" className="category-image" />
+                <Image src="/blended_spices.png" alt="Blended Spices and Masalas for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Blended Spices</h3>
                 <p className="category-description">
                   Custom spice blends developed to precise specifications with controlled batch consistency.
@@ -427,7 +435,7 @@ export default function Home() {
 
               {/* Category 2: Pure Spice Powders */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/pure_spice_powders.png" alt="Pure Spice Powders" className="category-image" />
+                <Image src="/pure_spice_powders.png" alt="Pure Spice Powders for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Pure Spice Powders</h3>
                 <p className="category-description">
                   Single ingredient spice powders processed, tested, and packed for export scale supply.
@@ -439,7 +447,7 @@ export default function Home() {
 
               {/* Category 3: Seasonings */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <img src="/seasonings.png" alt="Seasonings" className="category-image" />
+                <Image src="/seasonings.png" alt="Seasonings and Spice Blends for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Seasonings</h3>
                 <p className="category-description">
                   Functional seasoning mixes prepared for bulk supply and private label requirements.
@@ -476,7 +484,7 @@ export default function Home() {
               </StaggerContainer>
               <FadeIn direction="left" delay={0.2}>
                 <div className="quality-image-container">
-                  <img src="/quality-inspection.png" alt="Quality Inspection" className="quality-image" />
+                  <Image src="/quality-inspection.png" alt="Quality Inspection and Testing Process" width={600} height={400} className="quality-image" />
                 </div>
               </FadeIn>
             </div>
@@ -512,7 +520,7 @@ export default function Home() {
                     <div className="testimonial-content">
                       <p className="testimonial-quote">{testimonial.quote}</p>
                       <div className="testimonial-author">
-                        <img src={testimonial.image} alt={testimonial.name} className="author-avatar" />
+                        <Image src={testimonial.image} alt={`${testimonial.name} - ${testimonial.title}`} width={60} height={60} className="author-avatar" />
                         <div className="author-info">
                           <div className="author-name">{testimonial.name}</div>
                           <div className="author-title">{testimonial.title}</div>
@@ -553,7 +561,7 @@ export default function Home() {
               </div>
 
               <div className="cta-form-wrapper">
-                <form className="enquiry-form">
+                <form className="enquiry-form" aria-label="Contact enquiry form">
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="name">Full Name *</label>
@@ -597,7 +605,7 @@ export default function Home() {
                     <textarea id="message" name="message" rows={4} placeholder="Describe your specific needs, certifications required, or any questions..."></textarea>
                   </div>
 
-                  <button type="submit" className="form-submit-btn">
+                  <button type="submit" className="form-submit-btn" aria-label="Submit contact enquiry">
                     Submit Enquiry
                   </button>
                 </form>
@@ -614,7 +622,7 @@ export default function Home() {
           <div className="footer-content">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img src="/weagle-logo.svg" alt="Weagle Logo" className="logo-icon-footer" />
+                <img src="/weagle-logo.svg" alt="Weagle International Logo" width="32" height="32" className="logo-icon-footer" />
                 WEAGLE
               </div>
               <p className="footer-tagline">International Spice Exports</p>
@@ -642,8 +650,8 @@ export default function Home() {
               <div className="footer-column">
                 <h3 className="footer-heading">Contact</h3>
                 <ul className="footer-list">
-                  <li>Email: export@weagle.com</li>
-                  <li>Phone: +91 XXX XXX XXXX</li>
+                  <li>Email: <a href="mailto:export@weagleinternational.com" aria-label="Email Weagle International">export@weagleinternational.com</a></li>
+                  <li>Phone: <a href="tel:+919876543210" aria-label="Call Weagle International">+91 98765 43210</a></li>
                   <li>India</li>
                 </ul>
               </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FadeIn, StaggerContainer } from '@/components/animations';
 
@@ -18,8 +19,8 @@ export default function ProductsPage() {
             {/* Navigation Bar */}
             <header className="navbar">
                 <div className="container navbar-content">
-                    <a href="/" className="logo">
-                        <img src="/weagle-logo.svg" alt="Weagle Logo" className="logo-icon" />
+                    <a href="/" className="logo" aria-label="Weagle International Home">
+                        <img src="/weagle-logo.svg" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
                         WEAGLE INTERNATIONAL
                     </a>
                     <div className="nav-right">
@@ -90,7 +91,7 @@ export default function ProductsPage() {
 
                             <FadeIn delay={0.3}>
                                 <div className="category-visual-right">
-                                    <img src="/pure-spices-display.png" alt="Pure Spices" className="category-image" />
+                                    <Image src="/pure-spices-display.png" alt="Pure Spices Display - Export Quality" width={500} height={400} className="category-image" />
                                 </div>
                             </FadeIn>
                         </div>
@@ -130,7 +131,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.2}>
                                         <div className="masala-group-image">
-                                            <img src="/classic-masalas.png" alt="Classic Masalas" className="category-image" />
+                                            <Image src="/classic-masalas.png" alt="Classic and Kitchen Masalas" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -157,7 +158,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.3}>
                                         <div className="masala-group-image">
-                                            <img src="/meat-masalas.png" alt="Meat Masalas" className="category-image" />
+                                            <Image src="/meat-masalas.png" alt="Chicken and Meat Masalas" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -185,7 +186,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.4}>
                                         <div className="masala-group-image">
-                                            <img src="/specialty-masalas.png" alt="Specialty Masalas" className="category-image" />
+                                            <Image src="/specialty-masalas.png" alt="Specialty and Export Blends" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -231,7 +232,7 @@ export default function ProductsPage() {
 
                             <FadeIn delay={0.3}>
                                 <div className="category-visual-right">
-                                    <img src="/seasonings-pastes-display.png" alt="Seasonings & Pastes" className="category-image" />
+                                    <Image src="/seasonings-pastes-display.png" alt="Seasonings and Pastes Display - Export Quality" width={500} height={400} className="category-image" />
                                 </div>
                             </FadeIn>
                         </div>
@@ -248,8 +249,8 @@ export default function ProductsPage() {
                                     We regularly develop custom formulations, packaging, and export documentation based on market requirements. Share your specifications and we'll guide you through sampling, testing, and export readiness.
                                 </p>
                                 <div className="products-cta-buttons">
-                                    <button className="btn-primary-products">Request Sample & Pricing</button>
-                                    <a href="https://wa.me/1234567890" className="products-whatsapp-link">
+                                    <button className="btn-primary-products" aria-label="Request sample and pricing">Request Sample & Pricing</button>
+                                    <a href="https://wa.me/919876543210" className="products-whatsapp-link" aria-label="Chat on WhatsApp for quick questions">
                                         Chat on WhatsApp for Quick Questions →
                                     </a>
                                 </div>
