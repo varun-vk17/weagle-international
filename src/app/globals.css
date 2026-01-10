@@ -244,6 +244,34 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* WhatsApp Hero Button */
+.btn-whatsapp-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #25D366;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    margin-left: 0;
+    flex-shrink: 0;
+}
+
+.btn-whatsapp-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    background-color: #128C7E;
+}
+
+.btn-whatsapp-hero svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
 /* Hero Section */
 .hero-section {
     padding-top: 60px;
