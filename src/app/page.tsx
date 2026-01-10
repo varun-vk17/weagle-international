@@ -62,8 +62,7 @@ export default function Home() {
             </a>
             <div className="nav-right">
               <nav className="nav-links">
-                <Link href="/about">About Us</Link>
-                <a href="/products">Our Products</a>
+                <Link href="/products">Our Products</Link>
               </nav>
               <button
                 onClick={() => setIsFormExpanded(true)}
@@ -641,7 +640,6 @@ export default function Home() {
               <div className="footer-column">
                 <h3 className="footer-heading">Company</h3>
                 <ul className="footer-list">
-                  <li><Link href="/about">About Us</Link></li>
                   <li><a href="#certifications">Certifications</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>

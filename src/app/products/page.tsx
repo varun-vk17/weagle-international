@@ -26,7 +26,6 @@ export default function ProductsPage() {
                     </a>
                     <div className="nav-right">
                         <nav className="nav-links">
-                            <Link href="/about">About Us</Link>
                             <Link href="/products">Our Products</Link>
                         </nav>
                         <a href="/#contact" className="btn btn-primary btn-nav">
