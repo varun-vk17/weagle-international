@@ -4,6 +4,8 @@
     /* Black */
     --color-brand: #61245C;
     /* Brand Plum */
+    --color-brand-light: #F0E7F3;
+    /* Brand Light Lavender */
     --color-primary-dark: #333333;
     --color-background: #FFFFFF;
     --color-background-subtle: #ffffff;
@@ -618,7 +620,7 @@ body {
 
 /* Target Audience Section */
 .audience-section {
-    background-color: #EEEEEE;
+    background-color: var(--color-brand-light);
     border-radius: 48px;
     /* approx 3rem */
     padding: 80px 32px;
@@ -765,7 +767,7 @@ body {
 
 /* Comparison Section */
 .comparison-section {
-    background-color: #F9F9F7;
+    background-color: var(--color-brand-light);
     margin: 0;
     padding: 100px 24px;
 }
