@@ -24,7 +24,7 @@ export default function ProductsPage() {
             <header className="navbar">
                 <div className="container navbar-content">
                     <a href="/" className="logo" aria-label="Weagle International Home">
-                        <img src="/logo.png" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+                        <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
                         WEAGLE INTERNATIONAL
                     </a>
                     <div className="nav-right">
@@ -59,7 +59,7 @@ export default function ProductsPage() {
                     >
                         <div className="mobile-menu-header">
                             <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
-                                <img src="/logo.png" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+                                <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
                                 WEAGLE
                             </a>
                             <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
@@ -136,7 +136,7 @@ export default function ProductsPage() {
 
                             <FadeIn delay={0.3}>
                                 <div className="category-visual-right">
-                                    <Image src="/pure-spices-display.png" alt="Pure Spices Display - Export Quality" width={500} height={400} className="category-image" />
+                                    <Image src="/pure-spices-display.png" alt="Export Quality Pure Spices (Turmeric, Chilli, Coriander)" width={500} height={400} className="category-image" />
                                 </div>
                             </FadeIn>
                         </div>
@@ -176,7 +176,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.2}>
                                         <div className="masala-group-image">
-                                            <Image src="/classic-masalas.png" alt="Classic and Kitchen Masalas" width={400} height={300} className="category-image" />
+                                            <Image src="/classic-masalas.png" alt="Bulk Classic Kitchen Masalas (Curry Powder, Garam Masala)" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -203,7 +203,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.3}>
                                         <div className="masala-group-image">
-                                            <Image src="/meat-masalas.png" alt="Chicken and Meat Masalas" width={400} height={300} className="category-image" />
+                                            <Image src="/meat-masalas.png" alt="Export Quality Chicken and Meat Masalas" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -231,7 +231,7 @@ export default function ProductsPage() {
                                     </div>
                                     <FadeIn delay={0.4}>
                                         <div className="masala-group-image">
-                                            <Image src="/specialty-masalas.png" alt="Specialty and Export Blends" width={400} height={300} className="category-image" />
+                                            <Image src="/specialty-masalas.png" alt="Specialty Export Blends (Chaat Masala, Biryani Masala)" width={400} height={300} className="category-image" />
                                         </div>
                                     </FadeIn>
                                 </div>
@@ -277,7 +277,7 @@ export default function ProductsPage() {
 
                             <FadeIn delay={0.3}>
                                 <div className="category-visual-right">
-                                    <Image src="/seasonings-pastes-display.png" alt="Seasonings and Pastes Display - Export Quality" width={500} height={400} className="category-image" />
+                                    <Image src="/seasonings-pastes-display.png" alt="Bulk Seasonings and Pastes for Foodservice Export" width={500} height={400} className="category-image" />
                                 </div>
                             </FadeIn>
                         </div>

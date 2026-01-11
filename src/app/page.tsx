@@ -58,7 +58,7 @@ export default function Home() {
           <div className="container navbar-content">
 
             <a href="/" className="logo" aria-label="Weagle International Home">
-              <img src="/logo.png" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+              <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
               WEAGLE INTERNATIONAL
             </a>
             <div className="nav-right">
@@ -99,7 +99,7 @@ export default function Home() {
           >
             <div className="mobile-menu-header">
               <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
-                <img src="/logo.png" alt="Weagle International Logo" width="32" height="32" className="logo-icon" />
+                <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
                 WEAGLE
               </a>
               <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
@@ -300,7 +300,7 @@ export default function Home() {
               >
                 <Image
                   src="/product_spice.png"
-                  alt="Premium Export Quality Indian Spices - Weagle International"
+                  alt="Premium Indian spice powder heap by Weagle International - Export Quality"
                   width={600}
                   height={600}
                   className="hero-image"
@@ -317,7 +317,7 @@ export default function Home() {
           <FadeIn className="marquee-container">
             <div className="marquee-track">
               <div className="marquee-content">
-                <Image src="/fssai-logo.png" alt="FSSAI Food Safety Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/fssai-logo.png" alt="FSSAI Food Safety Certificate ISO for Spice Exports" width={120} height={60} className="cert-logo" />
                 <Image src="/iec-logo.png" alt="IEC Import Export Code Certification" width={120} height={60} className="cert-logo" />
                 <Image src="/msme-logo.png" alt="MSME Micro Small Medium Enterprise Certification" width={120} height={60} className="cert-logo" />
                 <Image src="/gmp-logo.png" alt="GMP Good Manufacturing Practice Certification" width={120} height={60} className="cert-logo" />
@@ -447,7 +447,7 @@ export default function Home() {
 
               {/* Center Column: Visual */}
               <div className="process-center">
-                <Image src="/export_process_center.png" alt="Export Process Tracking System" width={500} height={600} className="process-center-img" />
+                <Image src="/export_process_center.png" alt="Weagle International Spice Export Process & Tracking System" width={500} height={600} className="process-center-img" />
               </div>
 
               {/* Right Column */}
@@ -491,7 +491,7 @@ export default function Home() {
             <StaggerContainer className="products-grid">
               {/* Category 1: Blended Spices */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/blended_spices.png" alt="Blended Spices and Masalas for Export" width={400} height={300} className="category-image" />
+                <Image src="/blended_spices.png" alt="Bulk Blended Spices and Masalas for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Blended Spices</h3>
                 <p className="category-description">
                   Custom spice blends developed to precise specifications with controlled batch consistency.
@@ -503,7 +503,7 @@ export default function Home() {
 
               {/* Category 2: Pure Spice Powders */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/pure_spice_powders.png" alt="Pure Spice Powders for Export" width={400} height={300} className="category-image" />
+                <Image src="/pure_spice_powders.png" alt="Pure Spice Powders (Turmeric, Chilli, Coriander) for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Pure Spice Powders</h3>
                 <p className="category-description">
                   Single ingredient spice powders processed, tested, and packed for export scale supply.
@@ -515,7 +515,7 @@ export default function Home() {
 
               {/* Category 3: Seasonings */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
-                <Image src="/seasonings.png" alt="Seasonings and Spice Blends for Export" width={400} height={300} className="category-image" />
+                <Image src="/seasonings.png" alt="Bulk Seasonings and Custom Spice Blends for Export" width={400} height={300} className="category-image" />
                 <h3 className="category-title">Seasonings</h3>
                 <p className="category-description">
                   Functional seasoning mixes prepared for bulk supply and private label requirements.
@@ -554,7 +554,7 @@ export default function Home() {
                 <div className="quality-image-container">
                   <Image
                     src="/quality-inspection.png"
-                    alt="Quality Inspection and Testing Process"
+                    alt="ISO Quality Inspection and Testing Process for Indian Spices"
                     width={700}
                     height={382}
                     className="quality-image"
@@ -701,7 +701,7 @@ export default function Home() {
           <div className="footer-content">
             <div className="footer-brand">
               <div className="footer-logo">
-                <img src="/logo.png" alt="Weagle International Logo" width="32" height="32" className="logo-icon-footer" />
+                <img src="/logo.png" alt="Weagle International Logo" width="120" height="120" className="logo-icon-footer" />
                 WEAGLE
               </div>
               <p className="footer-tagline">International Spice Exports</p>
