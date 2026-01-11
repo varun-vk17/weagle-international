@@ -11,6 +11,9 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFormExpanded, setIsFormExpanded] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   const testimonials = [
     {
@@ -42,6 +45,48 @@ export default function Home() {
     }
   ];
 
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>, formType: string) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    setSubmitError('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      company: formData.get('company'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      product: formData.get('product'),
+      volume: formData.get('volume'),
+      message: formData.get('message'),
+      formType,
+    };
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitMessage('Thank you! Your message has been sent successfully. We will get back to you soon.');
+        e.currentTarget.reset();
+        setTimeout(() => {
+          setIsFormExpanded(false);
+          setSubmitMessage('');
+        }, 3000);
+      } else {
+        setSubmitError('Failed to send message. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      setSubmitError('An error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
@@ -59,11 +104,15 @@ export default function Home() {
 
             <a href="/" className="logo" aria-label="Weagle International Home">
               <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
-              WEAGLE INTERNATIONAL
+              <div className="logo-text">
+                <span className="logo-name">WEAGLE INTERNATIONAL</span>
+                <span className="logo-slogan">Quality is our Identity</span>
+              </div>
             </a>
             <div className="nav-right">
               <nav className="nav-links desktop-only">
                 <Link href="/products">Our Products</Link>
+                <Link href="/about">About Us</Link>
               </nav>
               <button
                 onClick={() => setIsFormExpanded(true)}
@@ -100,7 +149,10 @@ export default function Home() {
             <div className="mobile-menu-header">
               <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
                 <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
-                WEAGLE
+                <div className="logo-text">
+                  <span className="logo-name">WEAGLE</span>
+                  <span className="logo-slogan">Quality is our Identity</span>
+                </div>
               </a>
               <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
                 <X size={24} />
@@ -109,6 +161,7 @@ export default function Home() {
 
             <nav className="mobile-nav-links">
               <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
+              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
               <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
                 Request Sample & Pricing
               </button>
@@ -163,7 +216,7 @@ export default function Home() {
                 </motion.button>
 
                 <motion.a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/917200550188?text=Hi%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20spice%20export%20products.%20Can%20you%20please%20share%20more%20details%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp-hero"
@@ -197,7 +250,19 @@ export default function Home() {
                       <h2 id="modal-headline" className="modal-headline">Request Sample & Pricing</h2>
                       <p className="modal-subline">Submit your requirements and receive a detailed quote within 24 hours.</p>
 
-                      <form className="modal-enquiry-form" aria-label="Sample and pricing request form">
+                      {submitMessage && (
+                        <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#10B981', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                          {submitMessage}
+                        </div>
+                      )}
+
+                      {submitError && (
+                        <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#EF4444', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                          {submitError}
+                        </div>
+                      )}
+
+                      <form className="modal-enquiry-form" aria-label="Sample and pricing request form" onSubmit={(e) => handleFormSubmit(e, 'sample')}>
                         <div className="modal-form-row">
                           <div className="form-group">
                             <label htmlFor="modal-name">Full Name *</label>
@@ -241,8 +306,8 @@ export default function Home() {
                           <textarea id="modal-message" name="message" rows={4} placeholder="Describe your specific needs, certifications required, or any questions..."></textarea>
                         </div>
 
-                        <button type="submit" className="form-submit-btn" aria-label="Submit enquiry form">
-                          Submit Enquiry
+                        <button type="submit" className="form-submit-btn" aria-label="Submit enquiry form" disabled={isSubmitting}>
+                          {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
                         </button>
                       </form>
                     </div>
@@ -640,7 +705,19 @@ export default function Home() {
               </div>
 
               <div className="cta-form-wrapper">
-                <form className="enquiry-form" aria-label="Contact enquiry form">
+                {submitMessage && (
+                  <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#10B981', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                    {submitMessage}
+                  </div>
+                )}
+
+                {submitError && (
+                  <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#EF4444', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                    {submitError}
+                  </div>
+                )}
+
+                <form className="enquiry-form" aria-label="Contact enquiry form" onSubmit={(e) => handleFormSubmit(e, 'contact')}>
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="name">Full Name *</label>
@@ -684,8 +761,8 @@ export default function Home() {
                     <textarea id="message" name="message" rows={4} placeholder="Describe your specific needs, certifications required, or any questions..."></textarea>
                   </div>
 
-                  <button type="submit" className="form-submit-btn" aria-label="Submit contact enquiry">
-                    Submit Enquiry
+                  <button type="submit" className="form-submit-btn" aria-label="Submit contact enquiry" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
                   </button>
                 </form>
               </div>
@@ -729,7 +806,7 @@ export default function Home() {
                 <h3 className="footer-heading">Contact</h3>
                 <ul className="footer-list">
                   <li>Email: <a href="mailto:export@weagleinternational.com" aria-label="Email Weagle International">export@weagleinternational.com</a></li>
-                  <li>Phone: <a href="tel:+919876543210" aria-label="Call Weagle International">+91 98765 43210</a></li>
+                  <li>Phone: <a href="tel:+917200550188" aria-label="Call Weagle International">+91 72005 50188</a></li>
                   <li>India</li>
                 </ul>
               </div>

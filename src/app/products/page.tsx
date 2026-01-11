@@ -18,6 +18,53 @@ const staggerItem = {
 
 export default function ProductsPage() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isFormExpanded, setIsFormExpanded] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
+    const [submitError, setSubmitError] = useState('');
+
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>, formType: string) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitMessage('');
+        setSubmitError('');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            company: formData.get('company'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            product: formData.get('product'),
+            volume: formData.get('volume'),
+            message: formData.get('message'),
+            formType,
+        };
+
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setSubmitMessage('Thank you! Your message has been sent successfully. We will get back to you soon.');
+                e.currentTarget.reset();
+                setTimeout(() => {
+                    setIsFormExpanded(false);
+                    setSubmitMessage('');
+                }, 3000);
+            } else {
+                setSubmitError('Failed to send message. Please try again or contact us directly.');
+            }
+        } catch (error) {
+            setSubmitError('An error occurred. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <>
             {/* Navigation Bar */}
@@ -25,16 +72,25 @@ export default function ProductsPage() {
                 <div className="container navbar-content">
                     <a href="/" className="logo" aria-label="Weagle International Home">
                         <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
-                        WEAGLE INTERNATIONAL
+                        <div className="logo-text">
+                            <span className="logo-name">WEAGLE INTERNATIONAL</span>
+                            <span className="logo-slogan">Quality is our Identity</span>
+                        </div>
                     </a>
                     <div className="nav-right">
                         <nav className="nav-links desktop-only">
                             <Link href="/products">Our Products</Link>
+                            <Link href="/about">About Us</Link>
                         </nav>
-                        <a href="/#contact" className="btn btn-primary btn-nav desktop-only">
+                        <button
+                            onClick={() => setIsFormExpanded(true)}
+                            className="btn btn-primary btn-nav desktop-only"
+                            style={{ cursor: 'pointer' }}
+                            aria-label="Open request sample and pricing form"
+                        >
                             Request Sample & Pricing
                             <span className="arrow-icon">→</span>
-                        </a>
+                        </button>
 
                         <button
                             className="mobile-menu-btn"
@@ -60,7 +116,10 @@ export default function ProductsPage() {
                         <div className="mobile-menu-header">
                             <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
                                 <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
-                                WEAGLE
+                                <div className="logo-text">
+                                    <span className="logo-name">WEAGLE</span>
+                                    <span className="logo-slogan">Quality is our Identity</span>
+                                </div>
                             </a>
                             <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close mobile menu">
                                 <X size={24} />
@@ -69,9 +128,10 @@ export default function ProductsPage() {
 
                         <nav className="mobile-nav-links">
                             <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>Our Products</Link>
-                            <a href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                            <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
                                 Request Sample & Pricing
-                            </a>
+                            </button>
                         </nav>
                     </motion.div>
                 )}
@@ -294,8 +354,15 @@ export default function ProductsPage() {
                                     We regularly develop custom formulations, packaging, and export documentation based on market requirements. Share your specifications and we'll guide you through sampling, testing, and export readiness.
                                 </p>
                                 <div className="products-cta-buttons">
-                                    <button className="btn-primary-products" aria-label="Request sample and pricing">Request Sample & Pricing</button>
-                                    <a href="https://wa.me/919876543210" className="products-whatsapp-link" aria-label="Chat on WhatsApp for quick questions">
+                                    <button
+                                        onClick={() => setIsFormExpanded(true)}
+                                        className="btn-primary-products"
+                                        style={{ cursor: 'pointer' }}
+                                        aria-label="Request sample and pricing"
+                                    >
+                                        Request Sample & Pricing
+                                    </button>
+                                    <a href="https://wa.me/917200550188?text=Hi%2C%20I%27m%20interested%20in%20your%20spice%20products.%20Can%20you%20please%20provide%20more%20information%3F" target="_blank" rel="noopener noreferrer" className="products-whatsapp-link" aria-label="Chat on WhatsApp for quick questions">
                                         Chat on WhatsApp for Quick Questions →
                                     </a>
                                 </div>
@@ -303,6 +370,87 @@ export default function ProductsPage() {
                         </FadeIn>
                     </div>
                 </section>
+
+                {/* Expandable Form Modal */}
+                {isFormExpanded && (
+                    <div className="expandable-modal-overlay" onClick={() => setIsFormExpanded(false)} role="dialog" aria-modal="true" aria-labelledby="products-modal-headline">
+                        <div className="expandable-modal-content" onClick={(e) => e.stopPropagation()}>
+                            <button
+                                className="modal-close-btn"
+                                onClick={() => setIsFormExpanded(false)}
+                                aria-label="Close"
+                            >
+                                ✕
+                            </button>
+
+                            <div className="modal-form-wrapper">
+                                <h2 id="products-modal-headline" className="modal-headline">Request Sample & Pricing</h2>
+                                <p className="modal-subline">Submit your requirements and receive a detailed quote within 24 hours.</p>
+
+                                {submitMessage && (
+                                    <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#10B981', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                                        {submitMessage}
+                                    </div>
+                                )}
+
+                                {submitError && (
+                                    <div style={{ padding: '12px', marginBottom: '16px', backgroundColor: '#EF4444', color: 'white', borderRadius: '8px', textAlign: 'center' }}>
+                                        {submitError}
+                                    </div>
+                                )}
+
+                                <form className="modal-enquiry-form" aria-label="Sample and pricing request form" onSubmit={(e) => handleFormSubmit(e, 'sample')}>
+                                    <div className="modal-form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="products-modal-name">Full Name *</label>
+                                            <input type="text" id="products-modal-name" name="name" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="products-modal-company">Company Name *</label>
+                                            <input type="text" id="products-modal-company" name="company" required />
+                                        </div>
+                                    </div>
+
+                                    <div className="modal-form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="products-modal-email">Email Address *</label>
+                                            <input type="email" id="products-modal-email" name="email" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="products-modal-phone">Phone Number</label>
+                                            <input type="tel" id="products-modal-phone" name="phone" />
+                                        </div>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="products-modal-product">Product Interest *</label>
+                                        <select id="products-modal-product" name="product" required>
+                                            <option value="">Select a category</option>
+                                            <option value="blended">Blended Spices</option>
+                                            <option value="pure">Pure Spice Powders</option>
+                                            <option value="seasonings">Seasonings</option>
+                                            <option value="custom">Custom Requirements</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="products-modal-volume">Expected Monthly Volume</label>
+                                        <input type="text" id="products-modal-volume" name="volume" placeholder="e.g., 500 kg" />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="products-modal-message">Additional Requirements</label>
+                                        <textarea id="products-modal-message" name="message" rows={4} placeholder="Describe your specific needs, certifications required, or any questions..."></textarea>
+                                    </div>
+
+                                    <button type="submit" className="form-submit-btn" aria-label="Submit enquiry form" disabled={isSubmitting}>
+                                        {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </main>
         </>
     );
