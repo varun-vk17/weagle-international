@@ -567,13 +567,13 @@ body {
     }
 
     .logo {
-        font-size: 15px;
-        gap: 8px;
+        font-size: 13px;
+        gap: 6px;
     }
 
     .logo-icon {
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        height: 60px;
     }
 
     .btn-nav {
