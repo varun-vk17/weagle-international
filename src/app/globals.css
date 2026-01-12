@@ -4208,8 +4208,8 @@ body {
 .vm-icon-wrapper {
     width: 64px;
     height: 64px;
-    background-color: rgba(97, 36, 92, 0.1);
-    border-radius: 12px;
+    background-color: #f3f4f6;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4217,7 +4217,8 @@ body {
 }
 
 .vm-icon {
-    color: var(--color-brand);
+    color: #1a1a1a;
+    opacity: 1;
 }
 
 .vm-title {
