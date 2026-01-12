@@ -6,6 +6,7 @@ import Link from "next/link";
 import { FadeIn, StaggerContainer, staggerItem } from "@/components/animations";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 export default function AboutUs() {
     const [isFormExpanded, setIsFormExpanded] = useState(false);
@@ -73,6 +74,7 @@ export default function AboutUs() {
                             <Link href="/products">Our Products</Link>
                             <Link href="/about">About Us</Link>
                         </nav>
+                        <GoogleTranslate />
                         <button
                             onClick={() => setIsFormExpanded(true)}
                             className="btn btn-primary btn-nav desktop-only"
@@ -123,6 +125,9 @@ export default function AboutUs() {
                             <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
                                 Request Sample & Pricing
                             </button>
+                            <div className="mobile-translate-wrapper">
+                                <GoogleTranslate />
+                            </div>
                         </nav>
                     </motion.div>
                 )}

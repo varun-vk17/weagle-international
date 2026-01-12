@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { FadeIn, StaggerContainer } from '@/components/animations';
+import GoogleTranslate from '@/components/GoogleTranslate';
 
 const staggerItem = {
     hidden: { opacity: 0, y: 20 },
@@ -82,6 +83,7 @@ export default function ProductsPage() {
                             <Link href="/products">Our Products</Link>
                             <Link href="/about">About Us</Link>
                         </nav>
+                        <GoogleTranslate />
                         <button
                             onClick={() => setIsFormExpanded(true)}
                             className="btn btn-primary btn-nav desktop-only"
@@ -132,6 +134,9 @@ export default function ProductsPage() {
                             <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
                                 Request Sample & Pricing
                             </button>
+                            <div className="mobile-translate-wrapper">
+                                <GoogleTranslate />
+                            </div>
                         </nav>
                     </motion.div>
                 )}

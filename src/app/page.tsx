@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, staggerItem, ScaleIn } from "@/components/animations";
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,30 +18,21 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "Weagle International has been our trusted spice supplier for three years. Consistent quality and reliable delivery have eliminated our supply chain concerns.",
+      quote: "Weagle International delivers consistent quality across every shipment. Their controlled export process and clear communication have made them our most reliable spice supplier.",
       name: "Rajesh Kumar",
-      title: "Supply Chain Director",
-      company: "Global Foods Distribution",
-      color: "#F59E0B",
-      bgColor: "#000000",
+      title: "Import Director, Global Spice Distributors",
       image: "/avatar-rajesh.png"
     },
     {
-      quote: "Their batch consistency and compliance documentation meet our strict quality standards. We have not experienced a single quality issue in 24 months.",
+      quote: "From sample approval to final delivery, every step was transparent and on schedule. The batch consistency is exactly what our private label brand needed.",
       name: "Maria Santos",
-      title: "Quality Assurance Manager",
-      company: "Premium Spice Importers",
-      color: "#EF4444",
-      bgColor: "#10B981",
+      title: "Procurement Manager, Premium Foods Ltd",
       image: "/avatar-maria.png"
     },
     {
-      quote: "Pricing transparency and on-time shipments allow us to plan inventory with confidence. A reliable export partner for our private label business.",
-      name: "David Chen",
-      title: "Operations Director",
-      company: "Culinary Brands Inc",
-      color: "#EC4899",
-      bgColor: "#F59E0B",
+      quote: "Working with Weagle has eliminated our supplier risk. Their documentation is complete, quality is verified, and they actually respond when issues arise.",
+      name: "David Thompson",
+      title: "Supply Chain Director, International Imports",
       image: "/avatar-david.png"
     }
   ];
@@ -87,13 +79,7 @@ export default function Home() {
     }
   };
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   return (
     <>
@@ -114,6 +100,7 @@ export default function Home() {
                 <Link href="/products">Our Products</Link>
                 <Link href="/about">About Us</Link>
               </nav>
+              <GoogleTranslate />
               <button
                 onClick={() => setIsFormExpanded(true)}
                 className="btn btn-primary btn-nav desktop-only"
@@ -165,6 +152,9 @@ export default function Home() {
               <button onClick={() => { setIsMobileMenuOpen(false); setIsFormExpanded(true); }}>
                 Request Sample & Pricing
               </button>
+              <div className="mobile-translate-wrapper">
+                <GoogleTranslate />
+              </div>
             </nav>
           </motion.div>
         )}
@@ -635,58 +625,120 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Packaging & Private Label Capabilities Section */}
+        <section className="packaging-section">
+          <div className="container packaging-container">
+            <FadeIn>
+              <div className="packaging-header">
+                <h2 className="packaging-headline">Packaging & Private Label Capabilities</h2>
+                <p className="packaging-subline">
+                  We support private labeling and export-ready packaging for importers and brands across global markets.
+                </p>
+              </div>
+            </FadeIn>
+
+            <div className="packaging-scroll-wrapper">
+              <div className="packaging-scroll-container">
+                <FadeIn delay={0.1}>
+                  <div className="packaging-card">
+                    <Image
+                      src="/packaging_glass_jar.png"
+                      alt="Premium glass jar packaging for spice powder"
+                      width={400}
+                      height={400}
+                      className="packaging-image"
+                    />
+                  </div>
+                </FadeIn>
+
+                <FadeIn delay={0.2}>
+                  <div className="packaging-card">
+                    <Image
+                      src="/packaging_standup_pouch.png"
+                      alt="Stand-up pouch for blended spices"
+                      width={400}
+                      height={400}
+                      className="packaging-image"
+                    />
+                  </div>
+                </FadeIn>
+
+                <FadeIn delay={0.3}>
+                  <div className="packaging-card">
+                    <Image
+                      src="/packaging_bulk_export.png"
+                      alt="Bulk export packaging for spices"
+                      width={400}
+                      height={400}
+                      className="packaging-image"
+                    />
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <section className="testimonials-section">
           <div className="container testimonials-container">
             <FadeIn>
               <div className="testimonials-header">
-                <h2 className="testimonials-headline">Trusted by Importers Who Depend on Consistency</h2>
-                <p className="testimonials-subline">
-                  Importers choose us because reliability matters more than promises.
-                </p>
+                <div className="rating-badge">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 1L12.9389 6.90983L19.5106 7.84549L14.7553 12.4902L15.8779 19.0451L10 15.9098L4.12215 19.0451L5.24472 12.4902L0.489435 7.84549L7.06107 6.90983L10 1Z" fill="#4F46E5" />
+                  </svg>
+                  <span>Trusted by importers across 15+ countries</span>
+                </div>
+                <h2 className="testimonials-headline">Words of praise from others<br />about our presence.</h2>
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2}>
-              <div className="testimonials-stack">
-                {testimonials.map((testimonial, index) => {
-                  const position = (index - currentIndex + testimonials.length) % testimonials.length;
-                  return (
-                    <div
-                      key={index}
-                      className={`testimonial-card testimonial-card-${position}`}
-                      style={{
-                        backgroundColor: testimonial.bgColor,
-                        '--card-color': testimonial.color
-                      } as React.CSSProperties}
-                    >
-                      <div className="testimonial-content">
-                        <p className="testimonial-quote">{testimonial.quote}</p>
-                        <div className="testimonial-author">
-                          <Image src={testimonial.image} alt={`${testimonial.name} - ${testimonial.title}`} width={60} height={60} className="author-avatar" />
-                          <div className="author-info">
-                            <div className="author-name">{testimonial.name}</div>
-                            <div className="author-title">{testimonial.title}</div>
-                            <div className="author-company">{testimonial.company}</div>
-                          </div>
+            <div className="testimonials-marquee-wrapper">
+              <div className="testimonials-marquee-track">
+                <div className="testimonials-marquee-content">
+                  {testimonials.map((testimonial, index) => (
+                    <div key={index} className="testimonial-card">
+                      <div className="quote-icon">
+                        <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 17.92V32h14.08V17.92H7.04C7.04 11.9893 11.0293 7.04 17.92 7.04V0C6.72 0 0 6.72 0 17.92ZM22.08 17.92V32h14.08V17.92h-7.04c0-5.9307 3.9893-10.88 10.88-10.88V0c-11.2 0-17.92 6.72-17.92 17.92Z" fill="#E0E7FF" />
+                        </svg>
+                      </div>
+                      <p className="testimonial-quote">{testimonial.quote}</p>
+                      <div className="testimonial-author">
+                        <Image src={testimonial.image} alt={testimonial.name} width={48} height={48} className="author-avatar" />
+                        <div className="author-info">
+                          <div className="author-name">{testimonial.name}</div>
+                          <div className="author-title">{testimonial.title}</div>
                         </div>
                       </div>
                     </div>
-                  );
-                })}
+                  ))}
+                </div>
+                {/* Duplicate for seamless loop */}
+                <div className="testimonials-marquee-content">
+                  {testimonials.map((testimonial, index) => (
+                    <div key={`duplicate-${index}`} className="testimonial-card">
+                      <div className="quote-icon">
+                        <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 17.92V32h14.08V17.92H7.04C7.04 11.9893 11.0293 7.04 17.92 7.04V0C6.72 0 0 6.72 0 17.92ZM22.08 17.92V32h14.08V17.92h-7.04c0-5.9307 3.9893-10.88 10.88-10.88V0c-11.2 0-17.92 6.72-17.92 17.92Z" fill="#E0E7FF" />
+                        </svg>
+                      </div>
+                      <p className="testimonial-quote">{testimonial.quote}</p>
+                      <div className="testimonial-author">
+                        <Image src={testimonial.image} alt={testimonial.name} width={48} height={48} className="author-avatar" />
+                        <div className="author-info">
+                          <div className="author-name">{testimonial.name}</div>
+                          <div className="author-title">{testimonial.title}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              <div className="testimonials-nav">
-                <button onClick={handlePrev} className="nav-button" aria-label="Previous testimonial">
-                  ←
-                </button>
-                <button onClick={handleNext} className="nav-button" aria-label="Next testimonial">
-                  →
-                </button>
-              </div>
-            </FadeIn>
+            </div>
           </div>
-        </section >
+        </section>
 
         {/* Final CTA Section */}
         < section className="final-cta-section" >
