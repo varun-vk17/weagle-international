@@ -2,12 +2,12 @@
 :root {
     --color-primary: #000000;
     /* Black */
-    --color-brand: #61245C;
-    /* Brand Plum */
-    --color-brand-light: #F0E7F3;
-    /* Brand Light Lavender */
+    --color-brand: #FFFFFF;
+    /* White */
+    --color-brand-light: #FFFFFF;
+    /* White */
     --color-primary-dark: #333333;
-    --color-background: #F0E7F3;
+    --color-background: #FFFFFF;
     --color-background-subtle: #ffffff;
     --color-text-primary: #1a1a1a;
     /* Near Black */
