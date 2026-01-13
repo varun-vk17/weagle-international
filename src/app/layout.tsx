@@ -87,8 +87,11 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Weagle International',
+              alternateName: 'Weagle',
               url: 'https://weagleinternational.com',
               logo: 'https://weagleinternational.com/logo.png',
+              description: 'Weagle International is a premier exporter and manufacturer of high-quality Indian spices since 2019. We supply blended spices, pure spice powders, and custom seasonings to global markets including USA, UK, EU, Nigeria, and Ghana.',
+              foundingDate: '2019',
               sameAs: [
                 'https://linkedin.com/company/weagle-international',
                 'https://instagram.com/weagleinternational'
@@ -96,15 +99,77 @@ export default function RootLayout({
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+91-7200550188',
+                email: 'info@weagleinternational.com',
                 contactType: 'sales',
-                areaServed: ['US', 'GB', 'EU', 'NG', 'GH'],
-                availableLanguage: 'English'
+                areaServed: ['US', 'GB', 'EU', 'NG', 'GH', 'IN'],
+                availableLanguage: ['English', 'French', 'Spanish', 'German', 'Arabic', 'Portuguese']
               },
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'IN',
+                addressLocality: 'India'
+              },
+              makesOffer: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Product',
+                    name: 'Blended Spices & Masalas',
+                    description: 'Premium blended spice mixes for global export'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Product',
+                    name: 'Pure Spice Powders',
+                    description: 'Single-origin pure spice powders'
+                  }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: {
+                    '@type': 'Product',
+                    name: 'International Herbs and Seasonings',
+                    description: 'Custom seasoning blends for foodservice'
+                  }
+                }
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '5',
+                reviewCount: '1'
+              }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': 'https://weagleinternational.com/#localbusiness',
+              name: 'Weagle International',
+              image: 'https://weagleinternational.com/logo.png',
+              telephone: '+91-7200550188',
+              email: 'info@weagleinternational.com',
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'IN'
               },
-              description: 'Weagle International is a premier exporter of high-quality Indian spices, offering blended spices, pure spice powders, and custom seasonings to global markets including USA, UK, EU, and Africa.'
+              geo: {
+                '@type': 'GeoCoordinates',
+                addressCountry: 'IN'
+              },
+              url: 'https://weagleinternational.com',
+              priceRange: '$$',
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '09:00',
+                closes: '18:00'
+              }
             }),
           }}
         />
