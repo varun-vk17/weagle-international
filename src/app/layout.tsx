@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.jpg',
+    shortcut: '/logo.jpg',
+    apple: '/logo.jpg',
   },
 }
 
@@ -88,7 +88,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'Weagle International',
               url: 'https://weagleinternational.com',
-              logo: 'https://weagleinternational.com/logo.png',
+              logo: 'https://weagleinternational.com/logo.jpg',
               sameAs: [
                 'https://linkedin.com/company/weagle-international',
                 'https://instagram.com/weagleinternational'

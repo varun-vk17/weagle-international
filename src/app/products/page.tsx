@@ -72,7 +72,7 @@ export default function ProductsPage() {
             <header className="navbar">
                 <div className="container navbar-content">
                     <a href="/" className="logo" aria-label="Weagle International Home">
-                        <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
+                        <img src="/logo.jpg" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
                         <div className="logo-text">
                             <span className="logo-name">WEAGLE INTERNATIONAL</span>
                             <span className="logo-slogan">Quality is our Identity</span>
@@ -117,7 +117,7 @@ export default function ProductsPage() {
                     >
                         <div className="mobile-menu-header">
                             <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
-                                <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
+                                <img src="/logo.jpg" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
                                 <div className="logo-text">
                                     <span className="logo-name">WEAGLE</span>
                                     <span className="logo-slogan">Quality is our Identity</span>
