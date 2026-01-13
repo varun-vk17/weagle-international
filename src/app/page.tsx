@@ -281,7 +281,7 @@ export default function Home() {
                             <option value="">Select a category</option>
                             <option value="blended">Blended Spices</option>
                             <option value="pure">Pure Spice Powders</option>
-                            <option value="seasonings">Seasonings</option>
+                            <option value="seasonings">International Herbs and Seasonings</option>
                             <option value="custom">Custom Requirements</option>
                           </select>
                         </div>
@@ -372,11 +372,11 @@ export default function Home() {
           <FadeIn className="marquee-container">
             <div className="marquee-track">
               <div className="marquee-content">
-                <Image src="/fssai-logo.png" alt="FSSAI Food Safety Certificate ISO for Spice Exports" width={120} height={60} className="cert-logo" />
-                <Image src="/iec-logo.png" alt="IEC Import Export Code Certification" width={120} height={60} className="cert-logo" />
-                <Image src="/msme-logo.png" alt="MSME Micro Small Medium Enterprise Certification" width={120} height={60} className="cert-logo" />
-                <Image src="/gmp-logo.png" alt="GMP Good Manufacturing Practice Certification" width={120} height={60} className="cert-logo" />
-                <Image src="/haccp-logo.png" alt="HACCP Hazard Analysis Critical Control Point Certification" width={120} height={60} className="cert-logo" />
+                <Image src="/fssai-logo.jpg" alt="FSSAI Food Safety Certificate ISO for Spice Exports" width={120} height={60} className="cert-logo" loading="lazy" />
+                <Image src="/iec-logo.jpg" alt="IEC Import Export Code Certification" width={120} height={60} className="cert-logo" loading="lazy" />
+                <Image src="/msme-logo.jpg" alt="MSME Micro Small Medium Enterprise Certification" width={120} height={60} className="cert-logo" loading="lazy" />
+                <Image src="/gmp-logo.jpg" alt="GMP Good Manufacturing Practice Certification" width={120} height={60} className="cert-logo" loading="lazy" />
+                <Image src="/haccp-logo.jpg" alt="HACCP Hazard Analysis Critical Control Point Certification" width={120} height={60} className="cert-logo" loading="lazy" />
               </div>
             </div>
           </FadeIn>
@@ -502,7 +502,7 @@ export default function Home() {
 
               {/* Center Column: Visual */}
               <div className="process-center">
-                <Image src="/export_process_center.png" alt="Weagle International Spice Export Process & Tracking System" width={500} height={600} className="process-center-img" />
+                <Image src="/export_process_center.jpg" alt="Weagle International Spice Export Process & Tracking System" width={500} height={600} className="process-center-img" loading="lazy" />
               </div>
 
               {/* Right Column */}
@@ -571,12 +571,12 @@ export default function Home() {
               {/* Category 3: Seasonings */}
               <motion.div className="product-category" variants={staggerItem} whileHover={{ y: -5 }}>
                 <Image src="/seasonings.png" alt="Bulk Seasonings and Custom Spice Blends for Export" width={400} height={300} className="category-image" />
-                <h3 className="category-title">Seasonings</h3>
+                <h3 className="category-title">International Herbs and Seasonings</h3>
                 <p className="category-description">
                   Functional seasoning mixes prepared for bulk supply and private label requirements.
                 </p>
                 <a href="/products" className="category-cta">
-                  View Seasonings →
+                  View International Herbs and Seasonings →
                 </a>
               </motion.div>
             </StaggerContainer>
@@ -608,12 +608,13 @@ export default function Home() {
               <FadeIn direction="left" delay={0.2}>
                 <div className="quality-image-container">
                   <Image
-                    src="/quality-inspection.png"
+                    src="/quality-inspection.jpg"
                     alt="ISO Quality Inspection and Testing Process for Indian Spices"
                     width={700}
                     height={382}
                     className="quality-image"
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    loading="lazy"
                   />
                 </div>
               </FadeIn>
@@ -642,11 +643,12 @@ export default function Home() {
                 <FadeIn delay={0.1}>
                   <div className="packaging-card">
                     <Image
-                      src="/packaging_glass_jar.png"
-                      alt="Premium glass jar packaging for spice powder"
+                      src="/packaging_1.jpg"
+                      alt="Premium chicken masala spice blend"
                       width={400}
                       height={400}
                       className="packaging-image"
+                      loading="lazy"
                     />
                   </div>
                 </FadeIn>
@@ -654,11 +656,12 @@ export default function Home() {
                 <FadeIn delay={0.2}>
                   <div className="packaging-card">
                     <Image
-                      src="/packaging_standup_pouch.png"
-                      alt="Stand-up pouch for blended spices"
+                      src="/packaging_2.jpg"
+                      alt="Premium red chilli powder"
                       width={400}
                       height={400}
                       className="packaging-image"
+                      loading="lazy"
                     />
                   </div>
                 </FadeIn>
@@ -666,11 +669,25 @@ export default function Home() {
                 <FadeIn delay={0.3}>
                   <div className="packaging-card">
                     <Image
-                      src="/packaging_bulk_export.png"
-                      alt="Bulk export packaging for spices"
+                      src="/packaging_3.jpg"
+                      alt="Premium turmeric powder"
                       width={400}
                       height={400}
                       className="packaging-image"
+                      loading="lazy"
+                    />
+                  </div>
+                </FadeIn>
+
+                <FadeIn delay={0.4}>
+                  <div className="packaging-card">
+                    <Image
+                      src="/packaging_4.jpg"
+                      alt="Premium coriander powder"
+                      width={400}
+                      height={400}
+                      className="packaging-image"
+                      loading="lazy"
                     />
                   </div>
                 </FadeIn>
@@ -798,7 +815,7 @@ export default function Home() {
                       <option value="">Select a category</option>
                       <option value="blended">Blended Spices</option>
                       <option value="pure">Pure Spice Powders</option>
-                      <option value="seasonings">Seasonings</option>
+                      <option value="seasonings">International Herbs and Seasonings</option>
                       <option value="custom">Custom Requirements</option>
                     </select>
                   </div>
@@ -840,25 +857,24 @@ export default function Home() {
               <div className="footer-column">
                 <h3 className="footer-heading">Company</h3>
                 <ul className="footer-list">
-                  <li><a href="#certifications">Certifications</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#" onClick={(e) => { e.preventDefault(); setIsFormExpanded(true); }}>Contact</a></li>
                 </ul>
               </div>
 
               <div className="footer-column">
                 <h3 className="footer-heading">Products</h3>
                 <ul className="footer-list">
-                  <li><a href="#blended">Blended Spices</a></li>
-                  <li><a href="#pure">Pure Powders</a></li>
-                  <li><a href="#seasonings">Seasonings</a></li>
+                  <li><Link href="/products">Blended Spices</Link></li>
+                  <li><Link href="/products">Pure Powders</Link></li>
+                  <li><Link href="/products">International Herbs and Seasonings</Link></li>
                 </ul>
               </div>
 
               <div className="footer-column">
                 <h3 className="footer-heading">Contact</h3>
                 <ul className="footer-list">
-                  <li>Email: <a href="mailto:export@weagleinternational.com" aria-label="Email Weagle International">export@weagleinternational.com</a></li>
-                  <li>Phone: <a href="tel:+917200550188" aria-label="Call Weagle International">+91 72005 50188</a></li>
+                  <li>📧 <a href="mailto:info@weagleinternational.com" aria-label="Email Weagle International">info@weagleinternational.com</a></li>
+                  <li>📞 <a href="tel:+917200550188" aria-label="Call Weagle International">+91 7200550188</a></li>
                   <li>India</li>
                 </ul>
               </div>

@@ -312,7 +312,7 @@ export default function ProductsPage() {
                             <div className="category-left">
                                 <FadeIn>
                                     <div className="category-text-block">
-                                        <h2 className="category-main-title">Seasonings & Pastes</h2>
+                                        <h2 className="category-main-title">International Herbs and Seasonings & Pastes</h2>
                                         <p className="category-description">
                                             Export-ready seasonings and pastes developed for international foodservice, QSR, and private-label brands.
                                         </p>
@@ -433,7 +433,7 @@ export default function ProductsPage() {
                                             <option value="">Select a category</option>
                                             <option value="blended">Blended Spices</option>
                                             <option value="pure">Pure Spice Powders</option>
-                                            <option value="seasonings">Seasonings</option>
+                                            <option value="seasonings">International Herbs and Seasonings</option>
                                             <option value="custom">Custom Requirements</option>
                                         </select>
                                     </div>

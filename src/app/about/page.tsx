@@ -190,7 +190,7 @@ export default function AboutUs() {
                                         <option value="">Select a category</option>
                                         <option value="blended">Blended Spices</option>
                                         <option value="pure">Pure Spice Powders</option>
-                                        <option value="seasonings">Seasonings</option>
+                                        <option value="seasonings">International Herbs and Seasonings</option>
                                         <option value="custom">Custom Requirements</option>
                                     </select>
                                 </div>
@@ -315,26 +315,25 @@ export default function AboutUs() {
                             <div className="footer-column">
                                 <h3 className="footer-heading">Company</h3>
                                 <ul className="footer-list">
-                                    <li><a href="/about">About Us</a></li>
-                                    <li><a href="#certifications">Certifications</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    <li><Link href="/about">About Us</Link></li>
+                                    <li><a href="#" onClick={(e) => { e.preventDefault(); setIsFormExpanded(true); }}>Contact</a></li>
                                 </ul>
                             </div>
 
                             <div className="footer-column">
                                 <h3 className="footer-heading">Products</h3>
                                 <ul className="footer-list">
-                                    <li><a href="#blended">Blended Spices</a></li>
-                                    <li><a href="#pure">Pure Powders</a></li>
-                                    <li><a href="#seasonings">Seasonings</a></li>
+                                    <li><Link href="/products">Blended Spices</Link></li>
+                                    <li><Link href="/products">Pure Powders</Link></li>
+                                    <li><Link href="/products">International Herbs and Seasonings</Link></li>
                                 </ul>
                             </div>
 
                             <div className="footer-column">
                                 <h3 className="footer-heading">Contact</h3>
                                 <ul className="footer-list">
-                                    <li>Email: <a href="mailto:export@weagleinternational.com" aria-label="Email Weagle International">export@weagleinternational.com</a></li>
-                                    <li>Phone: <a href="tel:+917200550188" aria-label="Call Weagle International">+91 72005 50188</a></li>
+                                    <li>📧 <a href="mailto:info@weagleinternational.com" aria-label="Email Weagle International">info@weagleinternational.com</a></li>
+                                    <li>📞 <a href="tel:+917200550188" aria-label="Call Weagle International">+91 7200550188</a></li>
                                     <li>India</li>
                                 </ul>
                             </div>
