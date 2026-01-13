@@ -63,7 +63,7 @@ export default function AboutUs() {
             <header className="navbar">
                 <div className="container navbar-content">
                     <a href="/" className="logo" aria-label="Weagle International Home">
-                        <img src="/logo.jpg" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
+                        <img src="/logo.png" alt="Weagle International - Premium Indian Spice Exporter" width="60" height="60" className="logo-icon" />
                         <div className="logo-text">
                             <span className="logo-name">WEAGLE INTERNATIONAL</span>
                             <span className="logo-slogan">Quality is our Identity</span>
@@ -108,7 +108,7 @@ export default function AboutUs() {
                     >
                         <div className="mobile-menu-header">
                             <a href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
-                                <img src="/logo.jpg" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
+                                <img src="/logo.png" alt="Weagle International Logo" width="60" height="60" className="logo-icon" />
                                 <div className="logo-text">
                                     <span className="logo-name">WEAGLE</span>
                                     <span className="logo-slogan">Quality is our Identity</span>
@@ -291,7 +291,7 @@ export default function AboutUs() {
                     <div className="container brand-statement-container">
                         <FadeIn>
                             <div className="brand-logo-wrapper">
-                                <img src="/logo.jpg" alt="Weagle International Logo" className="brand-logo" />
+                                <img src="/logo.png" alt="Weagle International Logo" className="brand-logo" />
                             </div>
                             <p className="brand-statement-text">Quality is our Identity</p>
                         </FadeIn>
@@ -305,7 +305,7 @@ export default function AboutUs() {
                     <div className="footer-content">
                         <div className="footer-brand">
                             <div className="footer-logo">
-                                <img src="/logo.jpg" alt="Weagle International Logo" width="120" height="120" className="logo-icon-footer" />
+                                <img src="/logo.png" alt="Weagle International Logo" width="120" height="120" className="logo-icon-footer" />
                                 WEAGLE
                             </div>
                             <p className="footer-tagline">International Spice Exports</p>
