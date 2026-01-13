@@ -18,7 +18,7 @@ export default function GoogleTranslate() {
                 new window.google.translate.TranslateElement(
                     {
                         pageLanguage: 'en',
-                        includedLanguages: 'en,es,fr,de,it,pt,ar,zh-CN,hi,ja,ko,ru,tr',
+                        includedLanguages: 'en,fr,es,de,ar,pt',
                         layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
                         autoDisplay: false,
                     },
