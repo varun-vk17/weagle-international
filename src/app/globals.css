@@ -1694,6 +1694,11 @@ body {
         justify-content: center;
         overflow-x: visible;
     }
+
+    /* Hide duplicate cards on desktop */
+    .packaging-duplicate {
+        display: none;
+    }
 }
 
 /* Tablet and below: Enable horizontal scroll */

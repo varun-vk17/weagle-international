@@ -639,7 +639,8 @@ export default function Home() {
             </FadeIn>
 
             <div className="packaging-scroll-wrapper">
-              <div className="packaging-scroll-container">
+              <div className="packaging-scroll-container" id="packaging-carousel">
+                {/* Original cards */}
                 <FadeIn delay={0.1}>
                   <div className="packaging-card">
                     <Image
@@ -691,8 +692,91 @@ export default function Home() {
                     />
                   </div>
                 </FadeIn>
+
+                {/* Duplicate cards for infinite loop on mobile */}
+                <div className="packaging-card packaging-duplicate">
+                  <Image
+                    src="/packaging_1.jpg"
+                    alt="Premium chicken masala spice blend"
+                    width={400}
+                    height={400}
+                    className="packaging-image"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="packaging-card packaging-duplicate">
+                  <Image
+                    src="/packaging_2.jpg"
+                    alt="Premium red chilli powder"
+                    width={400}
+                    height={400}
+                    className="packaging-image"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="packaging-card packaging-duplicate">
+                  <Image
+                    src="/packaging_3.jpg"
+                    alt="Premium turmeric powder"
+                    width={400}
+                    height={400}
+                    className="packaging-image"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="packaging-card packaging-duplicate">
+                  <Image
+                    src="/packaging_4.jpg"
+                    alt="Premium coriander powder"
+                    width={400}
+                    height={400}
+                    className="packaging-image"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Infinite scroll script for packaging carousel */}
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    if (typeof window !== 'undefined') {
+                      const carousel = document.getElementById('packaging-carousel');
+                      if (!carousel) return;
+                      
+                      const cardWidth = 302; // 270px + 32px gap
+                      const totalCards = 4;
+                      let isScrolling = false;
+                      
+                      carousel.addEventListener('scroll', function() {
+                        if (isScrolling) return;
+                        
+                        const scrollLeft = carousel.scrollLeft;
+                        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                        
+                        // If scrolled to the end (showing duplicates), jump back to start
+                        if (scrollLeft >= cardWidth * totalCards) {
+                          isScrolling = true;
+                          carousel.scrollLeft = scrollLeft - (cardWidth * totalCards);
+                          setTimeout(() => { isScrolling = false; }, 50);
+                        }
+                        // If scrolled before the start, jump to end
+                        else if (scrollLeft <= 0) {
+                          isScrolling = true;
+                          carousel.scrollLeft = cardWidth * totalCards;
+                          setTimeout(() => { isScrolling = false; }, 50);
+                        }
+                      });
+                    }
+                  })();
+                `,
+              }}
+            />
           </div>
         </section>
 
