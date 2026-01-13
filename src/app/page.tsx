@@ -22,13 +22,13 @@ export default function Home() {
       quote: "Weagle International delivers consistent quality across every shipment. Their controlled export process and clear communication have made them our most reliable spice supplier.",
       name: "David Olajide",
       title: "Import Director, Nigeria",
-      image: "/avatar-rajesh.png"
+      image: "/avatar-david.png"
     },
     {
       quote: "From sample approval to final delivery, every step was transparent and on schedule. The batch consistency is exactly what our private label brand needed.",
       name: "Mohamed Fyzal",
       title: "Procurement Manager, UAE",
-      image: "/avatar-maria.png"
+      image: "/avatar-rajesh.png"
     },
     {
       quote: "Working with Weagle has eliminated our supplier risk. Their documentation is complete, quality is verified, and they actually respond when issues arise.",
@@ -40,7 +40,7 @@ export default function Home() {
       quote: "Exceptional service and premium quality spices. Weagle International has become our go-to supplier for authentic Indian spices with reliable global shipping.",
       name: "John Dimitrov",
       title: "Food Service Manager, Australia",
-      image: "/avatar-david.png"
+      image: "/avatar-rajesh.png"
     }
   ];
 
@@ -849,106 +849,11 @@ export default function Home() {
         </section>
 
 
+
+
         {/* FAQ Section */}
         <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
-        {/* FAQ Section */}
-        <FAQSection />
+
 
         {/* FAQ Schema Markup */}
         <script
