@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, staggerItem, ScaleIn } from "@/components/animations";
 import GoogleTranslate from "@/components/GoogleTranslate";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
