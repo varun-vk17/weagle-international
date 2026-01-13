@@ -4731,3 +4731,11 @@ body {
         height: 48px;
     }
 }
+
+/* Footer address styling */
+.footer-address {
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    line-height: 1.6;
+    margin-top: 16px;
+}

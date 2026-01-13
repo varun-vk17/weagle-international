@@ -20,20 +20,26 @@ export default function Home() {
   const testimonials = [
     {
       quote: "Weagle International delivers consistent quality across every shipment. Their controlled export process and clear communication have made them our most reliable spice supplier.",
-      name: "Rajesh Kumar",
-      title: "Import Director, Global Spice Distributors",
+      name: "David Olajide",
+      title: "Import Director, Nigeria",
       image: "/avatar-rajesh.png"
     },
     {
       quote: "From sample approval to final delivery, every step was transparent and on schedule. The batch consistency is exactly what our private label brand needed.",
-      name: "Maria Santos",
-      title: "Procurement Manager, Premium Foods Ltd",
+      name: "Mohamed Fyzal",
+      title: "Procurement Manager, UAE",
       image: "/avatar-maria.png"
     },
     {
       quote: "Working with Weagle has eliminated our supplier risk. Their documentation is complete, quality is verified, and they actually respond when issues arise.",
-      name: "David Thompson",
-      title: "Supply Chain Director, International Imports",
+      name: "Ivan Loginov",
+      title: "Supply Chain Director, Bulgaria",
+      image: "/avatar-david.png"
+    },
+    {
+      quote: "Exceptional service and premium quality spices. Weagle International has become our go-to supplier for authentic Indian spices with reliable global shipping.",
+      name: "John Dimitrov",
+      title: "Food Service Manager, Australia",
       image: "/avatar-david.png"
     }
   ];
@@ -1083,6 +1089,12 @@ export default function Home() {
                 WEAGLE
               </div>
               <p className="footer-tagline">International Spice Exports</p>
+              <p className="footer-address">
+                Weagle International<br />
+                No: 591D, Erode Road West,<br />
+                Vellakovil, Tiruppur-638 111.<br />
+                Tamilnadu, India.
+              </p>
             </div>
 
             <div className="footer-links">
