@@ -1826,11 +1826,11 @@ body {
     }
 
     .marquee-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
         max-width: 100%;
-        justify-items: center;
         /* Ensure no animation/movement */
         transform: none !important;
         animation: none !important;
@@ -1839,16 +1839,11 @@ body {
     .cert-logo {
         height: 50px;
         width: auto;
+        /* Ensure they don't shrink too much */
+        flex: 0 0 auto;
     }
 
-    /* Make 4th and 5th logos center in second row */
-    .cert-logo:nth-child(4) {
-        grid-column: 1 / 2;
-    }
-
-    .cert-logo:nth-child(5) {
-        grid-column: 2 / 3;
-    }
+    /* Remove specific grid placement */
 }
 
 /* --- B2B Positioning Section --- */
