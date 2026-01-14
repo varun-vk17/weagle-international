@@ -1706,13 +1706,19 @@ body {
     display: none;
 }
 
-/* Track - Swipeable container */
+/* Track - Swipeable container (manual scroll only) */
 .packaging-marquee-track {
     display: flex;
     gap: 24px;
     width: max-content;
-    animation: packaging-scroll 35s linear infinite;
-    will-change: transform;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.packaging-marquee-track::-webkit-scrollbar {
+    display: none;
 }
 
 /* Pause on touch/hover */
@@ -2721,9 +2727,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 24px;
+    padding-top: 0;
 }
 
 .control-btn {
