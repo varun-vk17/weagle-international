@@ -376,7 +376,7 @@ export default function Home() {
         {/* Certification Logos Marquee */}
         <section className="certifications-marquee">
           <FadeIn className="marquee-container">
-            <div className="marquee-track">
+            <div className="cert-track">
               <div className="marquee-content">
                 <Image src="/fssai-logo.jpg" alt="FSSAI Food Safety Certificate ISO for Spice Exports" width={120} height={60} className="cert-logo" loading="lazy" />
                 <Image src="/iec-logo.jpg" alt="IEC Import Export Code Certification" width={120} height={60} className="cert-logo" loading="lazy" />
