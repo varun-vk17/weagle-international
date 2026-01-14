@@ -16,15 +16,22 @@ export default function GoogleTranslate({ id = 'google_translate_element' }: { i
             if (window.google && window.google.translate) {
                 // Check if element exists before initializing
                 if (document.getElementById(id)) {
-                    new window.google.translate.TranslateElement(
-                        {
-                            pageLanguage: 'en',
-                            includedLanguages: 'en,fr,es,de,ar,pt',
-                            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-                            autoDisplay: false,
-                        },
-                        id
-                    );
+                    // Slight delay to ensure DOM is ready and preventing race conditions
+                    setTimeout(() => {
+                        try {
+                            new window.google.translate.TranslateElement(
+                                {
+                                    pageLanguage: 'en',
+                                    includedLanguages: 'en,fr,es,de,ar,pt',
+                                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                                    autoDisplay: false,
+                                },
+                                id
+                            );
+                        } catch (e) {
+                            console.error("Google Translate init error", e);
+                        }
+                    }, 500);
                 }
             }
         };
