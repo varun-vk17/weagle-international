@@ -1825,11 +1825,12 @@ body {
     }
 
     .cert-logo {
-        height: 60px;
+        height: 50px;
     }
 
     .marquee-content {
-        gap: 40px;
+        gap: 20px;
+        justify-content: center;
     }
 }
 
