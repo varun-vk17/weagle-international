@@ -1696,6 +1696,48 @@ body {
     border-radius: 16px;
 }
 
+/* === PACKAGING MOBILE CAROUSEL === */
+
+/* Viewport - Hides overflow on mobile */
+.packaging-marquee-viewport {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+/* Track - Swipeable container */
+.packaging-marquee-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: packaging-scroll 35s linear infinite;
+    will-change: transform;
+}
+
+/* Pause on touch/hover */
+.packaging-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Animation - Moves exactly 50% */
+@keyframes packaging-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Show on mobile */
+@media (max-width: 768px) {
+    .packaging-marquee-viewport {
+        display: block;
+    }
+}
+
 
 
 /* Mobile responsive */
