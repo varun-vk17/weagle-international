@@ -106,7 +106,9 @@ export default function Home() {
                 <Link href="/products">Our Products</Link>
                 <Link href="/about">About Us</Link>
               </nav>
-              <GoogleTranslate />
+              <div className="desktop-only">
+                <GoogleTranslate id="google_translate_desktop" />
+              </div>
               <button
                 onClick={() => setIsFormExpanded(true)}
                 className="btn btn-primary btn-nav desktop-only"
@@ -159,7 +161,7 @@ export default function Home() {
                 Request Sample & Pricing
               </button>
               <div className="mobile-translate-wrapper">
-                <GoogleTranslate />
+                <GoogleTranslate id="google_translate_mobile" />
               </div>
             </nav>
           </motion.div>

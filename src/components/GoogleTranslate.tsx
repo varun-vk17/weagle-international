@@ -10,44 +10,51 @@ declare global {
     }
 }
 
-export default function GoogleTranslate() {
+export default function GoogleTranslate({ id = 'google_translate_element' }: { id?: string }) {
     useEffect(() => {
-        // Define the initialization function
-        window.googleTranslateElementInit = () => {
+        const initTranslate = () => {
             if (window.google && window.google.translate) {
-                new window.google.translate.TranslateElement(
-                    {
-                        pageLanguage: 'en',
-                        includedLanguages: 'en,fr,es,de,ar,pt',
-                        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-                        autoDisplay: false,
-                    },
-                    'google_translate_element'
-                );
+                // Check if element exists before initializing
+                if (document.getElementById(id)) {
+                    new window.google.translate.TranslateElement(
+                        {
+                            pageLanguage: 'en',
+                            includedLanguages: 'en,fr,es,de,ar,pt',
+                            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                            autoDisplay: false,
+                        },
+                        id
+                    );
+                }
             }
         };
 
-        // Load the Google Translate script
-        const script = document.createElement('script');
-        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.body.appendChild(script);
+        // If generic script is already loading/loaded
+        if (window.google && window.google.translate) {
+            initTranslate();
+        } else {
+            // Chain callbacks to ensure all instances init
+            const originalInit = window.googleTranslateElementInit;
+            window.googleTranslateElementInit = () => {
+                if (originalInit) originalInit();
+                initTranslate();
+            };
 
-        return () => {
-            // Cleanup
-            const existingScript = document.querySelector('script[src*="translate.google.com"]');
-            if (existingScript) {
-                existingScript.remove();
+            if (!document.querySelector('script[src*="translate.google.com"]')) {
+                const script = document.createElement('script');
+                script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                script.async = true;
+                document.body.appendChild(script);
             }
-        };
-    }, []);
+        }
+    }, [id]);
 
     return (
         <div className="google-translate-wrapper">
             <div className="translate-icon-wrapper">
                 <Languages size={20} />
             </div>
-            <div id="google_translate_element"></div>
+            <div id={id}></div>
         </div>
     );
 }
