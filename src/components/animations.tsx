@@ -223,22 +223,6 @@ export function DraggableCarousel({ items, className = '', gap = 24, loop = true
                     />
                 ))}
             </div>
-
-            {/* Navigation Arrows (Optional but helpful) */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', position: 'absolute', top: '50%', left: 0, right: 0, transform: 'translateY(-50%)', pointerEvents: 'none', padding: '0 8px' }}>
-                <button
-                    onClick={() => setIndex(loop ? (index - 1 + items.length) % items.length : Math.max(0, index - 1))}
-                    style={{ pointerEvents: 'auto', background: 'white', borderRadius: '50%', width: 40, height: 40, border: '1px solid #eee', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', cursor: 'pointer' }}
-                >
-                    ←
-                </button>
-                <button
-                    onClick={() => setIndex(loop ? (index + 1) % items.length : Math.min(items.length - 1, index + 1))}
-                    style={{ pointerEvents: 'auto', background: 'white', borderRadius: '50%', width: 40, height: 40, border: '1px solid #eee', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', cursor: 'pointer' }}
-                >
-                    →
-                </button>
-            </div>
         </div>
     )
 }
