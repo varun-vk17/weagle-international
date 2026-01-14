@@ -1824,13 +1824,26 @@ body {
         padding: 40px 0;
     }
 
-    .cert-logo {
-        height: 50px;
+    .marquee-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 100%;
+        justify-items: center;
     }
 
-    .marquee-content {
-        gap: 20px;
-        justify-content: center;
+    .cert-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    /* Make 4th and 5th logos center in second row */
+    .cert-logo:nth-child(4) {
+        grid-column: 1 / 2;
+    }
+
+    .cert-logo:nth-child(5) {
+        grid-column: 2 / 3;
     }
 }
 
