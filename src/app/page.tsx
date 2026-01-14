@@ -845,6 +845,62 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Mobile Carousel */}
+            <div className="testimonials-mobile-wrapper">
+              <div className="testimonial-card-mobile">
+                <div className="quote-icon">
+                  <svg width="32" height="24" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 17.92V32h14.08V17.92H7.04C7.04 11.9893 11.0293 7.04 17.92 7.04V0C6.72 0 0 6.72 0 17.92ZM22.08 17.92V32h14.08V17.92h-7.04c0-5.9307 3.9893-10.88 10.88-10.88V0c-11.2 0-17.92 6.72-17.92 17.92Z" fill="#E0E7FF" />
+                  </svg>
+                </div>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="testimonial-content-mobile"
+                  >
+                    <p className="testimonial-quote">{testimonials[currentIndex].quote}</p>
+                    <div className="testimonial-author">
+                      <Image src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} width={40} height={40} className="author-avatar" />
+                      <div className="author-info">
+                        <div className="author-name">{testimonials[currentIndex].name}</div>
+                        <div className="author-title">{testimonials[currentIndex].title}</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+
+                <div className="testimonial-controls">
+                  <button
+                    onClick={() => setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                    className="control-btn"
+                    aria-label="Previous testimonial"
+                  >
+                    ←
+                  </button>
+                  <div className="testimonial-dots">
+                    {testimonials.map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={`dot ${idx === currentIndex ? 'active' : ''}`}
+                        onClick={() => setCurrentIndex(idx)}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                    className="control-btn"
+                    aria-label="Next testimonial"
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1006,7 +1062,7 @@ export default function Home() {
               <div className="footer-column">
                 <h3 className="footer-heading">Company</h3>
                 <ul className="footer-list">
-                  <li><a href="#" onClick={(e) => { e.preventDefault(); setIsFormExpanded(true); }}>Contact</a></li>
+                  <li><a href="#" onClick={(e) => { e.preventDefault(); setIsFormExpanded(true); }}>Enquiry</a></li>
                 </ul>
               </div>
 
