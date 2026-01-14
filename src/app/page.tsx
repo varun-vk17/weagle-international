@@ -660,36 +660,22 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Mobile Infinite Carousel */}
-              <div className="packaging-marquee-viewport mobile-only-block">
-                <div className="packaging-marquee-track">
-                  {/* First set */}
-                  <div className="packaging-card">
+              {/* Mobile Draggable Carousel */}
+              <div className="packaging-carousel-mobile mobile-only-block">
+                <DraggableCarousel items={[
+                  <div key="p1" className="packaging-card" style={{ width: '100%' }}>
                     <Image src="/packaging_1.jpg" alt="Premium chicken masala spice blend" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
+                  </div>,
+                  <div key="p2" className="packaging-card" style={{ width: '100%' }}>
                     <Image src="/packaging_2.jpg" alt="Premium red chilli powder" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
+                  </div>,
+                  <div key="p3" className="packaging-card" style={{ width: '100%' }}>
                     <Image src="/packaging_3.jpg" alt="Premium turmeric powder" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
+                  </div>,
+                  <div key="p4" className="packaging-card" style={{ width: '100%' }}>
                     <Image src="/packaging_4.jpg" alt="Premium coriander powder" width={400} height={400} className="packaging-image" loading="lazy" />
                   </div>
-                  {/* Duplicate set for infinite loop */}
-                  <div className="packaging-card">
-                    <Image src="/packaging_1.jpg" alt="Premium chicken masala spice blend" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
-                    <Image src="/packaging_2.jpg" alt="Premium red chilli powder" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
-                    <Image src="/packaging_3.jpg" alt="Premium turmeric powder" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                  <div className="packaging-card">
-                    <Image src="/packaging_4.jpg" alt="Premium coriander powder" width={400} height={400} className="packaging-image" loading="lazy" />
-                  </div>
-                </div>
+                ]} />
               </div>
             </div>
           </div>
