@@ -1639,31 +1639,39 @@ body {
     margin: 0 auto;
 }
 
-.packaging-scroll-wrapper {
-    width: 100%;
-    overflow: hidden;
-}
-
-.packaging-scroll-container {
+/* Mobile Visibility Helpers */
+.desktop-only-flex {
     display: flex;
-    gap: 32px;
-    overflow-x: auto;
-    /* scroll-behavior: smooth; removed for infinite loop */
-    scroll-snap-type: x mandatory;
-    padding: 8px 0 24px 0;
-    -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.packaging-scroll-container::-webkit-scrollbar {
+.mobile-only-block {
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.packaging-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+@media (max-width: 768px) {
+    .desktop-only-flex {
+        display: none !important;
+    }
+
+    .mobile-only-block {
+        display: block !important;
+    }
 }
+
+
+
+.packaging-grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.packaging-grid-desktop .packaging-card {
+    width: 100%;
+}
+
+
 
 .packaging-card {
     flex: 0 0 auto;
@@ -1688,27 +1696,7 @@ body {
     border-radius: 16px;
 }
 
-/* Desktop: Show 4 cards side by side */
-@media (min-width: 1200px) {
-    .packaging-scroll-container {
-        justify-content: center;
-        overflow-x: visible;
-    }
 
-    /* Hide duplicate cards on desktop */
-    .packaging-duplicate {
-        display: none;
-    }
-}
-
-/* Tablet and below: Enable horizontal scroll */
-@media (max-width: 1199px) {
-    .packaging-scroll-container {
-        justify-content: flex-start;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-}
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -2573,35 +2561,36 @@ body {
     line-height: 1.2;
 }
 
-.testimonials-marquee-wrapper {
+/* === INFINITE MARQUEE (INDUSTRY STANDARD) === */
+
+/* Viewport - Hides overflow */
+.marquee-viewport {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.testimonials-marquee-track {
+/* Track - Animated container with duplicated content */
+.marquee-track {
     display: flex;
     gap: 24px;
-    animation: marquee 40s linear infinite;
+    width: max-content;
+    animation: marquee-scroll 40s linear infinite;
     will-change: transform;
 }
 
-.testimonials-marquee-track:hover {
+/* Pause on hover */
+.marquee-track:hover {
     animation-play-state: paused;
 }
 
-.testimonials-marquee-content {
-    display: flex;
-    gap: 24px;
-    flex-shrink: 0;
-}
-
-@keyframes marquee {
-    0% {
+/* Animation - Moves exactly 50% (half the track width) */
+@keyframes marquee-scroll {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-50%);
     }
 }
@@ -2623,8 +2612,10 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     position: relative;
+    width: 400px;
     min-width: 400px;
     max-width: 400px;
+    min-height: 280px;
     flex-shrink: 0;
 }
 
