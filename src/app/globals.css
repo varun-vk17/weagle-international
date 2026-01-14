@@ -2612,6 +2612,14 @@ body {
     overflow: hidden;
 }
 
+/* Hide desktop marquee on mobile */
+@media (max-width: 768px) {
+    .marquee-viewport {
+        display: none;
+    }
+}
+
+
 /* Track - Animated container with duplicated content */
 .marquee-track {
     display: flex;
