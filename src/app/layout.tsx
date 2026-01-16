@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
+    icon: '/weagle-logo.svg',
+    shortcut: '/weagle-logo.svg',
     apple: '/logo.png',
   },
 }
