@@ -296,7 +296,7 @@ body {
     object-fit: contain;
 }
 
-/* Google Translate Widget */
+/* Google Translate Widget Styling */
 .google-translate-wrapper {
     display: flex;
     align-items: center;
@@ -311,39 +311,44 @@ body {
     color: var(--color-text-secondary);
 }
 
-/* Style the Google Translate dropdown */
 #google_translate_element {
     display: inline-block;
 }
 
-#google_translate_element select {
-    background-color: transparent;
-    border: 1px solid #E5E7EB;
-    border-radius: 8px;
-    padding: 6px 32px 6px 12px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
+/* Ensure the select dropdown is visible and styled */
+.goog-te-combo {
+    background-color: transparent !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 8px !important;
+    padding: 6px 32px 6px 12px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: var(--color-text-primary) !important;
+    cursor: pointer !important;
+    /* transition: all 0.2s ease; */
+    /* appearance: none; */
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E"); */
+    /* background-repeat: no-repeat; */
+    /* background-position: right 10px center; */
+    height: auto !important;
+    margin: 0 !important;
+    min-height: 36px;
+    line-height: 1.5 !important;
+    box-shadow: none !important;
 }
 
-#google_translate_element select:hover {
-    border-color: var(--color-primary);
-    background-color: #F9FAFB;
+.goog-te-combo:hover {
+    border-color: var(--color-primary) !important;
+    background-color: #F9FAFB !important;
 }
 
-#google_translate_element select:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+.goog-te-combo:focus {
+    outline: none !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Hide Google Translate branding */
+/* Hide Google Translate branding but keep gadget visible for layout */
 .goog-te-banner-frame,
 .goog-te-balloon-frame {
     display: none !important;
@@ -356,35 +361,48 @@ body {
 .goog-te-gadget {
     color: transparent !important;
     font-size: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
+/* Ensure the span containing the combo is visible */
+.goog-te-gadget>div {
+    display: inline-block !important;
+}
+
+/* Hide the "Powered by" text effectively */
 .goog-te-gadget span {
     display: none !important;
 }
 
-.goog-te-combo {
-    margin: 0 !important;
+/* EXCEPT for the span that wraps the select box (if any), but usually .goog-te-combo is direct or inside a div.
+   We explicitly hide the "Powered by" text node which is often direct inside .goog-te-gadget
+*/
+
+.goog-te-gadget .goog-te-combo {
+    display: block !important;
+    /* Make sure the select itself is visible */
 }
 
-/* Prevent body top margin added by Google Translate */
-body {
-    top: 0 !important;
-}
-
-/* Hide the "Powered by" text */
+/* Clean up extra spacing */
 .goog-te-gadget .goog-te-gadget-simple {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
 }
 
-.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value {
-    color: var(--color-text-primary) !important;
+/* Mobile adjustments if needed */
+@media (max-width: 768px) {
+    #google_translate_mobile .goog-te-combo {
+        width: 100% !important;
+        font-size: 16px !important;
+        /* Prevent zoom on mobile */
+    }
 }
 
-.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value span {
-    display: inline !important;
-    color: var(--color-text-primary) !important;
+/* Prevent body top margin added by Google Translate */
+body {
+    top: 0 !important;
 }
 
 /* Hero Section */
